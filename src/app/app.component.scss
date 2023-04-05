@@ -1,0 +1,13 @@
+.topics{
+    display: flex;
+    li{
+        list-style-type: none;
+        button{
+            appearance: none;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: aquamarine;
+            
+        }
+    }
+}
