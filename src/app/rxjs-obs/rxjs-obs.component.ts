@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-obs',
@@ -8,6 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class RxjsObsComponent implements OnInit{
 /* 
+
+Onde paramos: Aula 04 - Modulo 02 - 
+
+_________________________________
+
 - Estrutura de uma promisse consiste em uma chamada passando uma objeto de algum tipo, 
 podendo ser inclusive um objeto que você tipou.
 
@@ -15,6 +20,17 @@ podendo ser inclusive um objeto que você tipou.
 
 - Use: 'catch' para pegar os erros após o then.
  
+
+----------------------------
+
+- Estrutura de uma Promisse consiste em utilizar etapas de consumo da subscription. Por meio dos argumentos:
+
+next: Próxima instrução que será consumida ou utilizada.
+
+error: Caso venha á dar algum erro na subscrição
+
+complete: Quando essa subscrição estiver comleta, faça algo.
+
 
 
 */
@@ -24,9 +40,15 @@ ngOnInit(): void {
     .then( result =>console.log(result))
     .catch(error=> console.log(error))
 
+    const observer = { 
+      next: (result:any) => {console.log(result)},
+      error: (result:any) => {console.log(result)},
+      complete:() => {console.log();
+      }
+
+    }
     this.minhaPrimeiraObservable('Eloy').subscribe( 
-      result => console.log(result),
-      erro => console.log(erro)
+      observer
     )
     
 }
