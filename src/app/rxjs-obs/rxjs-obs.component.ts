@@ -24,32 +24,45 @@ podendo ser inclusive um objeto que você tipou.
 ----------------------------
 
 - Estrutura de uma Promisse consiste em utilizar etapas de consumo da subscription. Por meio dos argumentos:
+Processador de argumentos de uma Observable.
+Observer = {
+  
+  next: Próxima instrução que será consumida ou utilizada.
+  error: Caso venha á dar algum erro na subscrição
+  complete: Quando essa subscrição estiver comleta, faça algo.
 
-next: Próxima instrução que será consumida ou utilizada.
+}
 
-error: Caso venha á dar algum erro na subscrição
-
-complete: Quando essa subscrição estiver comleta, faça algo.
+- Pode ser utilizado o argumento unsubscribe para cancelar a chamada da observable. 
+- Pode-se também utilizar o atributo booleano closed para verifcar se a observable foi encerrada a ou não. 
 
 
 
 */
 
 ngOnInit(): void {
-    this.minhaPrimeiraPromise(' Dário')
+  /*   this.minhaPrimeiraPromise(' Dário')
     .then( result =>console.log(result))
     .catch(error=> console.log(error))
-
+ */
     const observer = { 
       next: (result:any) => {console.log(result)},
       error: (result:any) => {console.log(result)},
-      complete:() => {console.log();
+      complete:() => {console.log('Fim');
       }
 
     }
-    this.minhaPrimeiraObservable('Eloy').subscribe( 
+  /*   this.minhaPrimeiraObservable('Eloy').subscribe( 
       observer
-    )
+    ) */
+   let obs = this.userObservable('Admin','Adimin@admin.com')
+   let subs = obs.subscribe(observer)
+
+   setTimeout(()=>{
+    subs.unsubscribe()
+    console.log(subs.closed ? 'Conexão fechada' : 'Conexão aberta');
+    
+   },2000)
     
 }
 
@@ -81,8 +94,54 @@ minhaPrimeiraPromise(nome:string):Promise<string>{
     }
   
 
+    userObservable(
+      nome:string,
+      email:string
+    ):Observable<Usuario>{
+      return new Observable(subscriber=>{
+        let usuario = new Usuario(nome,email)
+      
+        if (usuario.nome == 'Admin') {
+        
+          setTimeout(()=>{
+            subscriber.next(usuario)
+          },1000)
+
+          setTimeout(()=>{
+            subscriber.next(usuario)
+          },2000)
+
+          setTimeout(()=>{
+            subscriber.next(usuario)
+          },3000)
+
+          setTimeout(()=>{
+            subscriber.next(usuario)
+          },4000)
+
+          setTimeout(()=>{
+            subscriber.complete()
+          },5000)
+        
+      }else{
+          subscriber.error('Erro demaize')
+      }
+      })
+    }
 
 
 
+}
 
+
+export class Usuario {
+  constructor(
+    nome:string,
+    email:string
+    ) {
+      this.nome = nome
+      this.email = email
+  }
+  nome:string;
+  email:string
 }
