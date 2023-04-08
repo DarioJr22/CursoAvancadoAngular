@@ -1,25 +1,68 @@
-<form action="get">
+
+<div class="form-Wrapper">
+    <h1>Registrar</h1>
+    <hr>
+
+<form action="get" autocomplete="off"  [formGroup]="registroForm">
     <div>
-        
         <label for="Nome">Nome</label>
-        <input class="form-control" type="text" id="Nome">
+        <input 
+        formControlName="nome"
+        class="form-control"
+        [ngClass]="{'is-invalid':registroForm.get('nome')?.errors && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched),
+                    'is-valid':registroForm.get('nome')?.valid && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched)}" 
+        type="text" 
+        id="Nome">
+        <div  class="text-danger" *ngIf="registroForm.get('nome')?.errors && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched)">
+            <p>preencha o campo mano !</p>
+        </div>
     </div>
 
     <div>
         
         <label for="Email">Email</label>
-        <input class="form-control" type="text" id="Email">
+        <input class="form-control" 
+        [ngClass]="{'is-invalid':registroForm.get('email')?.errors && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched),
+        'is-valid':registroForm.get('email')?.valid && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched)}" 
+
+        formControlName="email"
+        type="text" id="Email">
+        <div class="text-danger" *ngIf="registroForm.get('email')?.errors?.['required'] && (registroForm.get('email')?.dirty || registroForm.get('nome')?.touched)">
+            <p>preencha o campo mano !</p>
+        </div>
+
+        <div class="text-danger" *ngIf="registroForm.get('email')?.errors?.['email'] && (registroForm.get('email')?.dirty || registroForm.get('nome')?.touched)">
+            <p>Bote no formato certo mano !</p>
+        </div>
     </div>
 
     <div>
         
         <label for="CPF">CPF</label>
-        <input class="form-control" type="text" id="CPF">
+        <input 
+        formControlName="cpf"
+        class="form-control" 
+        type="text" id="CPF">
     </div>
 
     <div>
         
-        <label for="Numero">Numero</label>
-        <input class="form-control" type="text" id="Num">
+        <label for="Numero">Senha</label>
+        <input
+         class="form-control"
+         formControlName="senha"
+          type="password" id="Num">
     </div>
+
+    <button (click)="addUser()" class="btn btn-success"> Submit</button>
+    <button (click)="registroForm.reset()" class="btn btn-danger">Limpar</button>
+
+    <div>
+        <p>Formulário valido ?{{ registroForm.valid}}</p>
+        <p>Formulário tocado ?{{ registroForm.touched}}</p>
+        <p>Formulário Sujo ?{{ registroForm.dirty}}</p>
+    </div>
+
 </form>
+
+</div>

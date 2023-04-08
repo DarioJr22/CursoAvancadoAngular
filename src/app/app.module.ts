@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RxjsObsComponent } from './rxjs-obs/rxjs-obs.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgBrazil } from 'ng-brazil';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgBrazil,
   ],
   providers: [],
   bootstrap: [AppComponent]
