@@ -9,30 +9,23 @@
         <input 
         formControlName="nome"
         class="form-control"
-        [ngClass]="{'is-invalid':registroForm.get('nome')?.errors && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched),
-                    'is-valid':registroForm.get('nome')?.valid && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched)}" 
+        [ngClass]="{'is-invalid':displayMessage['nome']}" 
         type="text" 
-        id="Nome">
-        <div  class="text-danger" *ngIf="registroForm.get('nome')?.errors && (registroForm.get('nome')?.dirty || registroForm.get('nome')?.touched)">
-            <p>preencha o campo mano !</p>
-        </div>
+        id="Nome"
+        >
+        <div  class="text-danger" *ngIf="displayMessage['nome']">
+            <p [innerHTML]="displayMessage['nome']"></p>
+        </div> 
     </div>
 
     <div>
-        
         <label for="Email">Email</label>
         <input class="form-control" 
-        [ngClass]="{'is-invalid':registroForm.get('email')?.errors && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched),
-        'is-valid':registroForm.get('email')?.valid && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched)}" 
-
+        [ngClass]="{'is-invalid':displayMessage['email']}"  
         formControlName="email"
         type="text" id="Email">
-        <div class="text-danger" *ngIf="registroForm.get('email')?.errors?.['required'] && (registroForm.get('email')?.dirty || registroForm.get('nome')?.touched)">
-            <p>preencha o campo mano !</p>
-        </div>
-
-        <div class="text-danger" *ngIf="registroForm.get('email')?.errors?.['email'] && (registroForm.get('email')?.dirty || registroForm.get('nome')?.touched)">
-            <p>Bote no formato certo mano !</p>
+        <div class="text-danger" *ngIf="displayMessage['email']">
+            <p [innerHTML]="displayMessage['email']"></p>
         </div>
     </div>
 
@@ -41,8 +34,12 @@
         <label for="CPF">CPF</label>
         <input 
         formControlName="cpf"
-        class="form-control" 
+        class="form-control"
+        [ngClass]="{'is-invalid':displayMessage['cpf']}"  
         type="text" id="CPF">
+        <div class="text-danger" *ngIf="displayMessage['cpf']">
+            <p [innerHTML]="displayMessage['cpf']"></p>
+        </div>
     </div>
 
     <div>
@@ -51,7 +48,25 @@
         <input
          class="form-control"
          formControlName="senha"
+         [ngClass]="{'is-invalid':displayMessage['senha']}"
           type="password" id="Num">
+          <span class="text-danger" *ngIf="displayMessage['senha']">
+                <p [innerHTML]="displayMessage['senha']"></p>
+          </span>
+    </div>
+
+    
+    <div>
+        
+        <label for="Numero">Senha confirmação</label>
+        <input
+         class="form-control"
+         formControlName="senhaConfirm"
+         [ngClass]="{'is-invalid':displayMessage['senhaConfirm']}"
+        type="password">
+        <span class="text-danger" *ngIf="displayMessage['senhaConfirm']">
+        <p [innerHTML]="displayMessage['senhaConfirm']"></p>
+        </span>
     </div>
 
     <button (click)="addUser()" class="btn btn-success"> Submit</button>

@@ -6,20 +6,27 @@ import { AppComponent } from './app.component';
 import { RxjsObsComponent } from './rxjs-obs/rxjs-obs.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgBrazil } from 'ng-brazil';
+import { InputtextComponent } from './shared/inputtext/inputtext.component';
+import { InputnumberComponent } from './shared/inputnumber/inputnumber.component';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
+import { MensagemComponent } from './shared/mensagem/mensagem.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RxjsObsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    InputtextComponent,
+    InputnumberComponent,
+    DropdownComponent,
+    MensagemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    NgBrazil,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
