@@ -1,15 +1,15 @@
 // Imports style sheets
-@import "assets/templates/styles/layouts/layout";
+@import "./../../assets/styles/layouts/layout.scss";
 
-@import "assets/templates/styles/components/component";
+@import "./../../assets/styles/components/component";
 
-@import "assets/templates/styles/abstracts/abstract";
+@import "./../../assets/styles/abstracts/abstract";
 
-@import "assets/templates/styles/vendors/vendor";
+@import "./../../assets/styles/vendors/vendor";
 
-@import "assets/templates/styles/core/core";
+@import "./../../assets/styles/core/core";
 
-@import "assets/templates/tokens/tokens";
+@import "./../styles/tokens/tokens.scss";
 
 @import "~primeng/resources/themes/_theme";
 

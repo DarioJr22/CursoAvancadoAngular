@@ -11,7 +11,16 @@ const routes: Routes = [
   {
     path:'reactiveForms',
     component:ReactiveFormsComponent
+
+  },
+
+  {
+    path:'produtos',
+    loadChildren:()=> import('./../app/arquitetura-componentes/produto.module')
+    .then(x => x.ProdutoModule)
   }
+
+
 ];
 
 @NgModule({

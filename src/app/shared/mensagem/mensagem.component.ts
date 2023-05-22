@@ -7,10 +7,9 @@ import { Component,Input } from '@angular/core';
 })
 export class MensagemComponent {
 
-  @Input('mensagem') value:string ='';
-
+  @Input('mensagem') mensagem:string ='';
   @Input('mensagemTipo') mensagemTipo:string =''
 
-  
+
 
 }

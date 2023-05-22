@@ -1,8 +1,8 @@
-<div>
-    <div #msg 
-    *ngFor="let msg of value; let i = index"
-    aria-live="polite">
-        
-
-    </div>
+<div class="d-flex justify-content-center">
+   <p *ngIf="mensagem">{{mensagem}}</p>
+    <span [ngSwitch]="mensagemTipo">
+      <img *ngSwitchCase="mensagemTipo == 'sucess'" src="./../../../assets/icons/check-circle-fill.svg">
+      <img *ngSwitchCase="mensagemTipo == 'fail'"src="./../../../assets/icons/x-circle-fill.svg">
+      <img *ngSwitchCase="mensagemTipo == 'warn'"src="./../../../assets/icons/info-circle-fill.svg">
+    </span>
 </div>
