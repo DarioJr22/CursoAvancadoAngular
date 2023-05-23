@@ -1,0 +1,80 @@
+
+/* Organizar o método pelo qual faremos os média queries pra mobile
+ */
+@media screen and (max-width:720px){
+  .component-library{
+    display: flex;
+    flex-direction: row;
+    padding: 3rem;
+    border: 0.02rem solid #ccc;
+    border-radius: 3rem;
+  }
+.item-a{
+  padding: 1rem;
+  grid-area:1fr
+
+  }
+
+  .item-b{
+
+    padding: 1rem;
+    grid-area:1fr  ;
+  }
+
+  .item-c{
+
+    padding: 1rem;
+    grid-area:1fr ;
+  }
+
+  .item-d{
+    padding: 1rem;
+    grid-area:1fr ;
+  }
+
+}
+
+
+h1,h2,h3{
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+mat-card{
+  padding: 3rem;
+}
+
+
+
+.component-library{
+  display: grid;
+  grid-area: 1 / 1 / 10 / 10;
+  grid-gap:2rem;
+  padding: 3rem;
+  border: 0.02rem solid #ccc;
+  border-radius: 3rem;
+}
+
+.item-a{
+padding: 1rem;
+grid-area:1 / 1 / 5 / 5;
+
+}
+
+.item-b{
+
+  padding: 1rem;
+  grid-area:1 / 5 / 5 / 10 ;
+}
+
+.item-c{
+
+  padding: 1rem;
+  grid-area:5 / 1 / 10 / 5;
+}
+
+.item-d{
+  padding: 1rem;
+  grid-area:5 / 5 / 10 / 10;
+}

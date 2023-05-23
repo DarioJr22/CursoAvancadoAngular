@@ -1,9 +1,43 @@
-<h1>Lista</h1>
+<h1>Material Library</h1>
+<h2>Componentes prontos</h2>
 
 <hr />
+<!-- Grid container -->
+<div class="component-library">
+  <!-- Grid item  -->
+  <div class="item-a">
+    <mat-card>
+      <h3>Formulário de endereço</h3>
+      <app-mv-form-schematics>
+      </app-mv-form-schematics>
+    </mat-card>
 
-<h3 style="margin: 2rem;">Drop Down</h3>
-<app-dropdown
-[lista]="lista"
-(selecao)="getSelecaoDrop($event)"
-></app-dropdown>
+  </div>
+  <hr>
+  <!-- Grid item  -->
+  <div class="item-b">
+    <mat-card>
+      <h3>Dashboard</h3>
+      <app-mv-dashboard>
+      </app-mv-dashboard>
+    </mat-card>
+  </div>
+  <hr>
+
+ <div class="item-c">
+  <mat-card>
+    <h3>Tabela</h3>
+    <app-mv-table>
+    </app-mv-table>
+  </mat-card>
+ </div>
+  <hr>
+  <div class="item-d">
+    <mat-card>
+      <h3>Three</h3>
+      <app-mv-tree>
+      </app-mv-tree>
+    </mat-card>
+  </div>
+
+</div>

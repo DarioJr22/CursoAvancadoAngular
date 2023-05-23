@@ -1,3 +1,6 @@
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,9 +16,10 @@ import { MensagemComponent } from './shared/mensagem/mensagem.component';
 import { ProdutoDashboardComponent } from './arquitetura-componentes/produto-dashboard/produto-dashboard.component';
 import { ProdutoModule } from './arquitetura-componentes/produto.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CardDetalheComponent } from './componente/card-detalhe/card-detalhe.component';
-import { ContadorComponent } from './componente/contador/contador.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -23,9 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     RxjsObsComponent,
     ReactiveFormsComponent,
-    ContadorComponent,
 
-  
+
+
    /*  InputtextComponent,
     InputnumberComponent,
     DropdownComponent,
@@ -33,6 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ArqComponentComponent */
   ],
   imports: [
+    //Angular Core
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
