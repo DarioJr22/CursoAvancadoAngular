@@ -29,6 +29,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MvTreeComponent } from './mv-tree/mv-tree.component';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatSelectFilterModule } from 'mat-select-filter';
 
 @NgModule({
     declarations:[
@@ -67,7 +68,9 @@ import { MatTreeModule } from '@angular/material/tree';
         MatSortModule,
         MatGridListModule,
         MatMenuModule,
-        MatTreeModule
+        MatTreeModule,
+        //Adaptações do material -- Customização de componentes
+
 
     ],
     exports:[

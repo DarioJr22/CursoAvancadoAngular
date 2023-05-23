@@ -46,8 +46,6 @@ export class LibComponentComponent implements OnInit {
 
   getSelecaoDrop(event: any) {
     console.log(event);
-
-
   }
 
 }

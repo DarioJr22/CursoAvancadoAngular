@@ -23,6 +23,7 @@
     "angular2-text-mask": "^9.0.0",
     "bootstrap": "5.2.3",
     "bootstrap-icons": "^1.10.5",
+    "mat-select-filter": "^2.4.1",
     "ng2-validation": "^4.2.0",
     "primeng": "^15.4.3-lts",
     "rxjs": "~7.5.0",

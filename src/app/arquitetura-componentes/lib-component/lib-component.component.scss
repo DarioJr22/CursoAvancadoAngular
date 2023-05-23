@@ -47,34 +47,64 @@ mat-card{
 
 
 
-.component-library{
+.component-schemas-library{
   display: grid;
-  grid-area: 1 / 1 / 10 / 10;
+  grid-area: 1 / 1 / 12 / 12;
   grid-gap:2rem;
   padding: 3rem;
   border: 0.02rem solid #ccc;
   border-radius: 3rem;
 }
 
+h2{
+  grid-area: 1 /1 / 1 / 1 ;
+}
+
 .item-a{
+justify-self: center;
+margin-top: 5rem;
 padding: 1rem;
 grid-area:1 / 1 / 5 / 5;
 
 }
 
 .item-b{
-
+  justify-self: stretch;
   padding: 1rem;
   grid-area:1 / 5 / 5 / 10 ;
 }
 
 .item-c{
-
+  justify-self: center;
   padding: 1rem;
   grid-area:5 / 1 / 10 / 5;
 }
 
 .item-d{
+  justify-self: center;
   padding: 1rem;
   grid-area:5 / 5 / 10 / 10;
+}
+
+.component-library{
+  display: grid;
+  /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
+  grid-area: 1       / 1           / 20      / 10;
+  grid-gap:2rem;
+  justify-items: center;
+  padding: 3rem;
+  border: 0.02rem solid #ccc;
+  border-radius: 3rem;
+}
+
+ .item-a2{
+  padding: 1rem;
+  /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
+  grid-area:1 / 1 / 5 / 5 ;
+}
+
+.item-b2{
+  padding: 1rem;
+  /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
+  grid-area:1 / 6 / 5 / 11 ;
 }

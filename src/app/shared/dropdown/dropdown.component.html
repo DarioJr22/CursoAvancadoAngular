@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-select [placeholder]="nameField">
+    <mat-option (click)="selectItem(i)" *ngFor="let i of list" [value]="i">
+      {{i.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
