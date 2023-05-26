@@ -1,7 +1,14 @@
-<mat-form-field>
-  <mat-select [placeholder]="nameField">
-    <mat-option (click)="selectItem(i)" *ngFor="let i of list" [value]="i">
-      {{i.label}}
+<mat-form-field appearance="outline">
+  <mat-select
+  [placeholder]="nameField"
+  #select >
+  <mat-option >Selecione um valor</mat-option>
+  <mat-option (click)="selectItem(i)" *ngFor="let i of list" [value]="i">
+    {{i.label}}
     </mat-option>
   </mat-select>
+
+  <mat-error *ngIf="mensagem.mensageTipo == 'error'" >{{mensagem.mensagem}}</mat-error>
+  <mat-hint *ngIf="mensagem.mensageTipo == 'warn'">{{mensagem.mensagem}}</mat-hint>
+  <mat-hint *ngIf="mensagem.mensageTipo == 'sucsses'">{{mensagem.mensagem}}</mat-hint>
 </mat-form-field>

@@ -1,6 +1,6 @@
 import { Component,OnInit, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
 import { FormControl, FormGroup , FormBuilder,Validators, FormControlName} from '@angular/forms'
-import { Usuario } from './../../models/usuario';
+import { Usuario } from '../shared/models/interfaces/usuario';
 import { CustomValidators } from 'ng2-validation';
 import { DisplayMessage, GenericValidator, ValidationMessages } from '../shared/models/generic-forms-validators';
 import { Observable, fromEvent, merge } from 'rxjs';
@@ -35,26 +35,26 @@ export class ReactiveFormsComponent implements OnInit,AfterViewInit {
   1 - Utilizando FormGroup:
 
     Para lidar com um grupo de valores de Input. Você deve utilizar o Form Group.
-    FormControls são fragmentos de um formGroup. 
+    FormControls são fragmentos de um formGroup.
     Essas entidades são utilizadas para lidar com formulários em angular de forma 'reativa'
 
-  2 - Adicionando FormBuilder: 
+  2 - Adicionando FormBuilder:
 
     Use FormBuilder para chamar seus grupos de formulários e formArrays.
 
-  3 - Adicione Validadores ao seu formulário utilizando a classe 'Validators'. 
+  3 - Adicione Validadores ao seu formulário utilizando a classe 'Validators'.
 
-  - Nesta classe você pode vincular validações á campos do seu formulários. 
+  - Nesta classe você pode vincular validações á campos do seu formulários.
 
   4 - Pegue erros de validação com os atributos .errors
-  
+
   - Antes disso vocÊ também consegue validar se o formulário foi tocado ou mechido com os atributos:
-    - touched 
+    - touched
     - dirty
 
 
-    
-    
+
+
     */
 //let nome = new FormControl('Nome do Form COntrol')
   constructor(private fb:FormBuilder){
@@ -89,36 +89,37 @@ export class ReactiveFormsComponent implements OnInit,AfterViewInit {
 
 
     this.registroForm = this.fb.group({
-      nome: ['',Validators.required], 
+      nome: ['',Validators.required, CustomValidators.rangeLength([2,12])],
       email:['',[Validators.required,Validators.email]],
       cpf:['',[Validators.required]],
       senha:senha,
-      senhaConfirm: senhaConfirm 
-    
+      senhaConfirm: senhaConfirm
+
     })
+
 }
 
   ngAfterViewInit(): void {
-    let controlBlurs:Observable<any>[] = 
+    let controlBlurs:Observable<any>[] =
     this.formInputElements.map((FormControl:ElementRef)=> fromEvent(FormControl.nativeElement,'blur'))
-    
+
     merge(...controlBlurs).subscribe(() => {
       this.displayMessage = this.genericValidators.processarMensagens(this.registroForm)
     })
     console.log(this.displayMessage);
-    
+
   }
 
 
- 
+
 
   addUser(){
     this.usuario = new Usuario()
-    this.registroForm.valid ?  
+    this.registroForm.valid ?
     Object.assign(this.usuario,this.registroForm.value) &&
-    alert(JSON.stringify(this.usuario)) :  
+    alert(JSON.stringify(this.usuario)) :
     alert('Formulário inválido')
-   
-    
+
+
   }
 }

@@ -42,13 +42,17 @@
 </div>
 
 <div class="component-library">
-  <div class="item-a2">
-    <app-dropdown
-    [nameField]="'DropDown Comum'"
-    [list]="lista"
-    (selected)="getSelecaoDrop($event)">
-    </app-dropdown>
-  </div>
+  <form [formGroup]="form" action="">
+    <div class="item-a2">
+      <app-dropdown
+        [nameField]="'DropDown Comum'"
+        [list]="lista"
+        (selected)="getSelecaoDrop($event)">
+      </app-dropdown>
+        <pre>{{return}}</pre>
+    </div>
+  </form>
+
 
 
 </div>

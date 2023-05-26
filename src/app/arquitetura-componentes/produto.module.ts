@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { NgModule } from "@angular/core";
 import {HttpClientModule} from "@angular/common/http"
@@ -19,7 +20,8 @@ import Utils from "../shared/models/Util/Utils";
         ProdutoRoutingModule,
         HttpClientModule,
         SharedModule,
-        MatCardModule
+        MatCardModule,
+        ReactiveFormsModule
 
 
     ],

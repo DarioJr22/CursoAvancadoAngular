@@ -1,8 +1,7 @@
-<div class="d-flex justify-content-center">
-   <p *ngIf="mensagem">{{mensagem}}</p>
-    <span [ngSwitch]="mensagemTipo">
-      <img *ngSwitchCase="mensagemTipo == 'sucess'" src="./../../../assets/icons/check-circle-fill.svg">
-      <img *ngSwitchCase="mensagemTipo == 'fail'"src="./../../../assets/icons/x-circle-fill.svg">
-      <img *ngSwitchCase="mensagemTipo == 'warn'"src="./../../../assets/icons/info-circle-fill.svg">
-    </span>
-</div>
+
+
+      <mat-error *ngIf="mensagemTipo == 'error'" >{{mensagem}}</mat-error>
+      <mat-hint *ngIf="mensagemTipo == 'warn'">{{mensagem}}</mat-hint>
+      <mat-hint *ngIf="mensagemTipo == 'sucsses'">{{mensagem}}</mat-hint>
+
+
