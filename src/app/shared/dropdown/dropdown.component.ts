@@ -5,22 +5,14 @@ import {
   Output,
   EventEmitter,
   OnInit,
-  ElementRef,
-  ViewChild,
-  OnChanges,
-  SimpleChanges,
   forwardRef,
-  AfterViewInit,
-  HostListener,
-  Directive,
 } from '@angular/core';
 import { ValueField } from '../models/interfaces/value-fields';
 import Utils from '../models/Util/Utils';
 import { Mgs } from '../models/Enum/mensagens';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormControlName, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatSelect } from '@angular/material/select';
+import { AbstractControl,Validator, ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { State } from '../models/Enum/state';
-import { state } from '@angular/animations';
+import { DisplayMessage, GenericValidator } from '../models/generic-forms-validators';
 
 @Component({
   selector: 'app-dropdown',
@@ -31,41 +23,93 @@ import { state } from '@angular/animations';
       provide:NG_VALUE_ACCESSOR,
       useExisting:forwardRef(()=>DropdownComponent),
       multi:true
-
-
-
+    },
+    {
+      provide:NG_VALIDATORS,
+      useExisting:forwardRef(()=>DropdownComponent),
+      multi:true
     }
   ]
 
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent implements OnInit,ControlValueAccessor,Validator {
 
+  //Input de dados do componente
+
+  //Valores iniciais
+  @Input() initialValue:ValueField = {value:'',label:''}
   @Input() nameField!:string;
+  @Input() mutiplo:boolean = false;
+
+  //Lista de dados que serão exibidos no dropdown
   @Input() list:ValueField[] = [];
-  @Input() mensagem:MgsCampos = { mensagem:'', mensageTipo:''};
+
+  //Mensagens
+  @Input() mensagem:MgsCampos = { mensagem:'',mensagemTipo:''};
+
+  //Estado do componente
+  @Input() disab:boolean = false
+
+  //formControl
+  @Input() control:FormControl = new FormControl<ValueField>(this.initialValue)
+
+
+
+  //OutPut de dados do componente
   @Output() selected:EventEmitter<ValueField> = new EventEmitter<ValueField>()
-  @ViewChild('select') select!:MatSelect;
-  @HostListener('focusout', ['$event'])
-  validaCampos(event:any){
-  if (!Utils.validaValoresNulos(this.select.value)) {
-    this.mensagem.mensagem = Mgs.CAMPO_OBRIGATORIO
-    this.mensagem.mensageTipo = State.ERRO
 
-  }else{
-    this.mensagem.mensagem = Mgs.CAMPO_VALIDO
-    this.mensagem.mensageTipo = State.SUCSESS
+
+  constructor() { }
+
+  //Function to be called when any changes ocurrs on component
+  onChange = ( value:ValueField) => {
 
 
   }
-
-  console.log(this.mensagem);
-
-    /*
-    this.utils.(event) */
+  handleDataChange(event:any){
+    const dataSelected = event;
+    console.log(this.mensagem);
+   /*  this.onChange(dataSelected) */
+    this.selected.emit(dataSelected)
   }
 
-  constructor(private utils:Utils,
-    private fb:FormBuilder) { }
+
+
+
+  //Function to be called when the component get touched
+  onTouched = () => {}
+
+
+  // Allows Angular to update the model .
+  // Update the model and changes needed for the view here.
+  writeValue(obj: any): void {
+  this.control.setValue(obj);
+  }
+
+  // Allows Angular to register a function to call when the model  changes.
+  // Save the function as a property to call later here.
+  registerOnChange(fn: any): void {
+    this.control.valueChanges.subscribe(fn)
+    this.onChange = fn
+  }
+
+  // Allows Angular to register a function to call when the input has been touched.
+  // Save the function as a property to call later here.
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn
+  }
+
+  setDisabledState?(): void {
+    this.disab ? this.control.disable({onlySelf:true}) : this.control.enable({onlySelf:true})
+  }
+
+  validate(c: AbstractControl){
+
+
+   return c.errors
+  }
+
+
 
 
   ngOnInit(): void {
@@ -78,8 +122,9 @@ export class DropdownComponent implements OnInit {
 
 
   selectItem(i:ValueField){
-    this.selected.emit(i)
+   /*  this.onChange(i) */
   }
+
 
 
 

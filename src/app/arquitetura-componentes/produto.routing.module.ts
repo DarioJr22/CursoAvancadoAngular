@@ -6,10 +6,7 @@ import { LibComponentComponent } from './lib-component/lib-component.component';
 
 const produtoRouterConfig: Routes = [
     {
-        path:'',component:ProdutoDashboardComponent
-    },
-    {
-    path:'lib', component:LibComponentComponent
+        path:'',component:LibComponentComponent
     }
 ]
 

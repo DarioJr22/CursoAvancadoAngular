@@ -15,7 +15,7 @@ const routes: Routes = [
   },
 
   {
-    path:'produtos',
+    path:'',
     loadChildren:()=> import('./../app/arquitetura-componentes/produto.module')
     .then(x => x.ProdutoModule)
   }

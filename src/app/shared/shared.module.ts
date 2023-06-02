@@ -29,7 +29,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MvTreeComponent } from './mv-tree/mv-tree.component';
 import { MatTreeModule } from '@angular/material/tree';
-import { MatSelectFilterModule } from 'mat-select-filter';
+
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { ButtonComponent } from './button/button.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
     declarations:[
@@ -41,7 +44,11 @@ import { MatSelectFilterModule } from 'mat-select-filter';
         MvNavigationComponent,
         MvTableComponent,
         MvDashboardComponent,
-        MvTreeComponent
+        MvTreeComponent,
+        SideBarComponent,
+        ButtonComponent,
+        CheckboxComponent,
+        SideBarComponent
 
     ],
     imports:[
@@ -69,6 +76,8 @@ import { MatSelectFilterModule } from 'mat-select-filter';
         MatGridListModule,
         MatMenuModule,
         MatTreeModule,
+        MatButtonModule,
+        MatSidenavModule
         //Adaptações do material -- Customização de componentes
 
 
@@ -82,7 +91,8 @@ import { MatSelectFilterModule } from 'mat-select-filter';
         DropdownComponent,
         InputtextComponent,
         MensagemComponent,
-        InputnumberComponent
+        InputnumberComponent,
+        SideBarComponent
     ]
 })
 

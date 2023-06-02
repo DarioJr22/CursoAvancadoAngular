@@ -2,36 +2,7 @@
 /* Organizar o método pelo qual faremos os média queries pra mobile
  */
 @media screen and (max-width:720px){
-  .component-library{
-    display: flex;
-    flex-direction: row;
-    padding: 3rem;
-    margin:3rem;
-    border: 0.02rem solid #ccc;
-    border-radius: 3rem;
-  }
-.item-a{
-  padding: 1rem;
-  grid-area:1fr
 
-  }
-
-  .item-b{
-
-    padding: 1rem;
-    grid-area:1fr  ;
-  }
-
-  .item-c{
-
-    padding: 1rem;
-    grid-area:1fr ;
-  }
-
-  .item-d{
-    padding: 1rem;
-    grid-area:1fr ;
-  }
 
 }
 
@@ -50,7 +21,14 @@ mat-card{
 
 .component-schemas-library{
   display: grid;
-  grid-area: 1 / 1 / 12 / 12;
+  grid-template-areas:
+  "h h h h h h"
+  "a a a b b b"
+  "a a a b b b"
+  "c c c d d d"
+  "c c c d d d"
+  "e e e e e e"
+  "e e e e e e";
   grid-gap:2rem;
   padding: 3rem;
   margin: 3rem;
@@ -63,63 +41,82 @@ h2{
 }
 
 .item-a{
-justify-self: center;
+
+grid-area:a;
+/* justify-self: center;
 margin-top: 5rem;
 padding: 1rem;
-grid-area:1 / 1 / 5 / 5;
+grid-area:1 / 1 / 5 / 5; */
 
 }
 
 .item-b{
-  justify-self: stretch;
+  grid-area:b;
+ /*  justify-self: stretch;
   padding: 1rem;
-  grid-area:1 / 5 / 5 / 10 ;
+  grid-area:1 / 5 / 5 / 10 ; */
 }
 
 .item-c{
-  justify-self: center;
+  grid-area:c;
+ /*  justify-self: center;
   padding: 1rem;
-  grid-area:5 / 1 / 10 / 5;
+  grid-area:5 / 1 / 10 / 5; */
 }
 
 .item-d{
-  justify-self: center;
+  grid-area:d;
+ /*  justify-self: center;
   padding: 1rem;
-  grid-area:5 / 5 / 10 / 10;
+  grid-area:5 / 5 / 10 / 10; */
 }
 
 .component-library{
   display: grid;
   /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
-  grid-area: 1       / 1           / 20      / 10;
-  grid-gap:2rem;
+ /*  grid-area: 1       / 1           / 20      / 10; */
+  grid-template-areas:
+  "h h h h h h"
+  "a a a b b b"
+  "a a a b b b"
+  "c c c d d d"
+  "c c c d d d"
+  "e e e e e e"
+  "e e e e e e";
   justify-items: center;
-  padding: 3rem;
-  margin:3rem;
+  margin:0.1rem;
   border: 0.02rem solid #ccc;
   border-radius: 3rem;
 }
 
+  .header-2{
+    grid-area: h;
+  }
+
  .item-a2{
-  padding: 1rem;
+
   /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
-  grid-area:2 / 1 / 5 / 5 ;
+  grid-area:a;
+
 }
 
 .item-b2{
-  padding: 1rem;
+
   /*        RowStart  ColumnStart  RowEnd   ColumnEnd */
-  grid-area:2 / 6 / 5 / 11 ;
+  grid-area:b;
 }
 
 .item-c2{
-padding:1rem;
-grid-area:6 / 1 / 10 / 5;
+
+grid-area:c;
 }
 
 .item-d2{
-  padding:1rem;
-  grid-area:6 / 5 / 10 / 10;
+  grid-area: d;
+}
+
+.item-e2{
+  grid-area: e;
 }
 
 

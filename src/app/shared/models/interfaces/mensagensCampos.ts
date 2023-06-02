@@ -1,4 +1,4 @@
 export interface MgsCampos{
   mensagem:string;
-  mensageTipo:string;
+  mensagemTipo:string;
 }

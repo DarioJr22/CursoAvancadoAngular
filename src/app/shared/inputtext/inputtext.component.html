@@ -1,1 +1,16 @@
-<p>inputtext works!</p>
+
+<mat-form-field appearance="outline">
+  <mat-label *ngIf="nameField">{{nameField}}</mat-label>
+  <input
+  type="text"
+  matInput
+  [formControl]="control"
+  (blur)="emitItem(control.value)">
+  <mat-error *ngIf="control.errors ">
+    {{mensagem.mensagem}}
+  </mat-error>
+
+  <mat-hint *ngIf="mensagem && mensagem.mensagemTipo == 'sucsess' || mensagem.mensagemTipo == 'warn'">
+    {{mensagem.mensagem}}
+  </mat-hint>
+</mat-form-field>

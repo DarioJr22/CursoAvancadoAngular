@@ -1,14 +1,22 @@
 <mat-form-field appearance="outline">
+  <mat-label *ngIf="nameField">{{nameField ? nameField:''}}</mat-label>
   <mat-select
+  (closed)="handleDataChange($event)"
   [placeholder]="nameField"
+  [formControl]="control"
+  class="ng-valid"
+  [multiple]="mutiplo"
   #select >
-  <mat-option >Selecione um valor</mat-option>
   <mat-option (click)="selectItem(i)" *ngFor="let i of list" [value]="i">
     {{i.label}}
     </mat-option>
   </mat-select>
 
-  <mat-error *ngIf="mensagem.mensageTipo == 'error'" >{{mensagem.mensagem}}</mat-error>
-  <mat-hint *ngIf="mensagem.mensageTipo == 'warn'">{{mensagem.mensagem}}</mat-hint>
-  <mat-hint *ngIf="mensagem.mensageTipo == 'sucsses'">{{mensagem.mensagem}}</mat-hint>
-</mat-form-field>
+  <mat-error *ngIf="control.errors">
+    {{mensagem.mensagem}}
+  </mat-error>
+
+  <mat-hint *ngIf="mensagem && mensagem.mensagemTipo == 'sucsess' || mensagem.mensagemTipo == 'warn'">
+    {{mensagem.mensagem}}
+  </mat-hint>
+

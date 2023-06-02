@@ -1,5 +1,4 @@
-<h1>Material Library</h1>
-<hr />
+
 <!-- Grid container -->
 <div class="component-schemas-library">
 
@@ -41,18 +40,52 @@
   </div>
 </div>
 
-<div class="component-library">
-  <form [formGroup]="form" action="">
+<div >
+  <form [formGroup]="form" action="" class="component-library">
+
+    <h1 class="header-2">Proposta de inputs</h1>
     <div class="item-a2">
       <app-dropdown
-        [nameField]="'DropDown Comum'"
+        [nameField]="'Drop Down Comun'"
         [list]="lista"
-        (selected)="getSelecaoDrop($event)">
+        [disab]="false"
+        [mensagem]="this.displayMessage['dropdownComum']"
+        [control]="this.dropDown"
+        (selected)="getDropDownValue()">
       </app-dropdown>
-        <pre>{{return}}</pre>
     </div>
+    <div class="item-b2">
+      <app-inputnumber
+      [nameField]="'Input Number comum'"
+      [disab]="false"
+      [mensagem]="this.displayMessage['inputNumberComum']"
+      [control]="this.inputNumber"
+      (selected)="getInputNumberValue()">
+      </app-inputnumber>
+    </div>
+    <div class="item-c2">
+      <app-inputtext
+      [nameField]="'Input Text comum'"
+      [disab]="false"
+      [mensagem]="this.displayMessage['inputTextComum']"
+      [control]="this.inputText"
+      (selected)="getInputTextValue()">
+      </app-inputtext>
+    </div>
+
+  <!--   <div class="item-d2">
+      <app-inputtext
+      [nameField]="'Input Text comum'"
+      [disab]="false"
+      [mensagem]="this.displayMessage['inputTextComum']"
+      [control]="this.inputText"
+      (selected)="getInputTextValue()">
+      </app-inputtext>
+
+    </div> -->
+    <div class="item-e2">
+      <pre>{{this.form.value | json}}</pre>
+    </div>
+
   </form>
-
-
-
 </div>

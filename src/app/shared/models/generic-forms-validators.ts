@@ -1,4 +1,5 @@
 import { FormGroup } from '@angular/forms';
+import { MgsCampos } from './interfaces/mensagensCampos';
 
 export class GenericValidator {
     constructor(private validationMessages: ValidationMessages){}
@@ -19,7 +20,7 @@ export class GenericValidator {
                         if((c.dirty || c.touched) && c.errors){
                             Object.keys(c.errors).map((messageK:any) =>{
                                 if(this.validationMessages[controlKey][messageK]){
-                                    messages[controlKey] += this.validationMessages[controlKey][messageK]
+                                    messages[controlKey] = {mensagem:this.validationMessages[controlKey][messageK], mensagemTipo:''}
                                 }
                             });
                         }
@@ -32,7 +33,7 @@ export class GenericValidator {
 }
 
 export interface DisplayMessage {
-        [key: string]:string
+        [key: string]:MgsCampos
 }
 
 export interface ValidationMessages {

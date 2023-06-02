@@ -4,8 +4,12 @@ import { ProdutoDashboardService } from '../produto-dashboard/produto-dashboard.
 import { Produto } from 'src/app/shared/models/interfaces/produtos-pexels';
 import { ValueField } from 'src/app/shared/models/interfaces/value-fields';
 import { Mgs } from 'src/app/shared/models/Enum/mensagens';
-import { FormBuilder,FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormControlName, FormGroup, Validators, ControlValueAccessor, AbstractControl } from '@angular/forms';
 import { Observable, merge,fromEvent } from 'rxjs';
+import { DropdownComponent } from 'src/app/shared/dropdown/dropdown.component';
+import Utils from 'src/app/shared/models/Util/Utils';
+import { MgsCampos } from 'src/app/shared/models/interfaces/mensagensCampos';
+import { State } from 'src/app/shared/models/Enum/state';
 
 @Component({
   selector: 'app-lib-component',
@@ -15,54 +19,63 @@ import { Observable, merge,fromEvent } from 'rxjs';
 export class LibComponentComponent implements OnInit {
   lista:ValueField[] = [];
   form!:FormGroup;
+  Utils!:Utils
 
-  //Fazendo uma lista com os inputs contidos no meu componente.
-  //Pendência -> Lógica de implementação do reactiveforms.
- /*  @ViewChildren(FormControl, { read: ElementRef }) formInputElements: ElementRef[]=[];
+  //Mensageria
+  validationMessages!:ValidationMessages;
+  genericValidator!:GenericValidator;
+  displayMessage!:DisplayMessage;
 
-  ngAfterViewInit(): void {
-    let controlBlurs:Observable<any>[] = this.formInputElements.map((formControl:ElementRef) => fromEvent(formControl.nativeElement,'blur'));
-  console.log(controlBlurs);
 
-  merge(...controlBlurs).subscribe(()=>{
-    this.display = this.genericValidators.processarMensagens(this.form);
-  })
-  console.log(this.display)
-
-  } */
+  //Mensagem por campo
 
 
 
   formBuild(){
     this.form = this.fb.group({
-      dropdownComum:['',Validators.required]
+      dropdownComum:['',[Validators.required]],
+      dropdownMultiValorado:['',[Validators.required]],
+      inputNumberComum:['',[Validators.required,Validators.minLength(4)]],
+      textareaComum:['',[Validators.required,Validators.maxLength(23)]],
+      inputTextComum:['',[Validators.required,Validators.email]],
+
     })
+
+    //1 º - Mensagem por validação
+    this.validationMessages = {
+      dropdownComum:{
+        required: Mgs.CAMPO_OBRIGATORIO,
+      },
+      inputNumberComum:{
+        required:Mgs.CAMPO_OBRIGATORIO,
+        minLength:Mgs.MIN_LENGTH
+      },
+      textareaComum:{
+        required:Mgs.CAMPO_OBRIGATORIO,
+        maxLength:Mgs.MAX_LENGTH
+      },
+      inputTextComum:{
+        required:Mgs.CAMPO_OBRIGATORIO,
+        email:Mgs.EMAIL_INVALIDO
+      }
+    }
+    //2º - Validação por campo
+    this.genericValidator = new GenericValidator(this.validationMessages);
+    this.displayMessage = this.genericValidator.processarMensagens(this.form)
+
   }
 
-  ValidationMessages:ValidationMessages ={
-    dropdownComum:{
-      required:Mgs.CAMPO_OBRIGATORIO,
-      minLength:Mgs.CAMPO_INVALID
-    }
-  }
-  genericValidators!:GenericValidator;
-  display:DisplayMessage = {};
+
 
   ngOnInit(): void {
-    this.getProdutos();
     this.formBuild();
-    this.genericValidators = new GenericValidator(this.ValidationMessages);
+    this.getProdutos();
+
   }
 
-teste(){
-  console.log(this.display);
-  console.log(this.dropDown);
- console.log(this.form.controls);
-}
 
-get dropDown(){
-  return this.form.get('dropdownComum');
-}
+
+
 
 
   getProdutos(){
@@ -76,10 +89,10 @@ get dropDown(){
         })
       },
       error: (err:any) => {
-        console.log(err);
+
       },
       complete: ()=>{
-        console.log(this.lista);
+
 
       }
     })
@@ -93,11 +106,77 @@ get dropDown(){
     private fb:FormBuilder
     ) { }
 
+    //$====== Dropdown ======$
+      get dropDown(){
+        return Utils.convertToFormControl(this.form.get('dropdownComum'));
+      }
 
-  return!:any
-  getSelecaoDrop(event: any) {
-    this.return = JSON.stringify(event);
-    console.log(event);
-  }
+      //GetDropdown Value
+        getDropDownValue() {this.getValidations()}
+
+
+      //$====== InputNumber ======$
+      get inputNumber(){
+        return Utils.convertToFormControl(this.form.get('inputNumberComum'));
+      }
+
+      //GetInputNumber Value
+      getInputNumberValue() {this.getValidations()}
+
+    //$====== InputText ======$
+      get inputText(){
+        return Utils.convertToFormControl(this.form.get('inputTextComum'));
+      }
+
+      //GetInputText Value
+      getInputTextValue() {this.getValidations()}
+    //$====== TextArea // Falta configurar ======$
+
+    get textarea(){
+      return Utils.convertToFormControl(this.form.get('textareaComum'));
+    }
+
+    //GetInputTextArea Value
+   /*  getinputTextAreaValue() {
+      this.displayMessage = this.genericValidator.processarMensagens(this.form)
+      this.msg['textareaComum'] = this.getValidations(this.displayMessage['textareaComum'],'textareaComum',State.ERRO)
+
+    } */
+
+
+    //$====== Dropdown Multi Valorado ======$
+
+    get DropdownMultiValorado(){
+      return Utils.convertToFormControl(this.form.get('dropdownMultiValorado'));
+    }
+
+    //GetDropdownMultiValorado Value
+    getDropdownMultiValoradoValue() {
+      this.displayMessage = this.genericValidator.processarMensagens(this.form)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Validações
+
+    getValidations(){
+      this.displayMessage = this.genericValidator.processarMensagens(this.form)
+    }
+
+
 
 }
