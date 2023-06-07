@@ -1,8 +1,57 @@
 
-/* Organizar o método pelo qual faremos os média queries pra mobile
- */
+@import "../../../assets/styleCustom/core/shadows";
 @media screen and (max-width:720px){
+  .component-schemas-library{
+    display: grid;
+    grid-template-areas:
+    "h h h h h h"
+    "a a a a a a"
+    "b b b b b b"
+    "c c c c c c"
+    "d d d d d d";
+    padding: 3rem;
+    margin: 3rem;
+    background: url(./../../../assets/imgs/Logo_MV_844x348_Colorida_CMYK.png) no-repeat center center;
+    border: 0.02rem solid #ccc;
+    border-radius: 3rem;
+    box-shadow: $shadow-level-1;
 
+    .item-a{
+
+      grid-area:a;
+      /* justify-self: center;
+      margin-top: 5rem;
+      padding: 1rem;
+      grid-area:1 / 1 / 5 / 5; */
+
+      }
+
+      .item-b{
+        grid-area:b;
+       /*  justify-self: stretch;
+        padding: 1rem;
+        grid-area:1 / 5 / 5 / 10 ; */
+      }
+
+      .item-c{
+        grid-area:c;
+       /*  justify-self: center;
+        padding: 1rem;
+        grid-area:5 / 1 / 10 / 5; */
+      }
+
+      .item-d{
+        grid-area:d;
+       /*  justify-self: center;
+        padding: 1rem;
+        grid-area:5 / 5 / 10 / 10; */
+
+      }
+
+      h2{
+        grid-area: h ;
+      }
+    }
 
 }
 
@@ -32,8 +81,10 @@ mat-card{
   grid-gap:2rem;
   padding: 3rem;
   margin: 3rem;
+  background: url(./../../../assets/imgs/Logo_MV_844x348_Colorida_CMYK.png) no-repeat center center;
   border: 0.02rem solid #ccc;
   border-radius: 3rem;
+  box-shadow: $shadow-level-1;
 }
 
 h2{
@@ -83,10 +134,19 @@ grid-area:1 / 1 / 5 / 5; */
   "c c c d d d"
   "e e e e e e"
   "e e e e e e";
+  mat-select,input{
+    background-color: white !important;
+  }
   justify-items: center;
-  margin:0.1rem;
+  margin: 3rem;
   border: 0.02rem solid #ccc;
   border-radius: 3rem;
+  background: url(./../../../assets/imgs/Logo_MV_844x348_Colorida_CMYK.png) no-repeat center center;
+
+  box-shadow: $shadow-level-1;
+  &:hover{
+    transform: scale(1);
+  }
 }
 
   .header-2{

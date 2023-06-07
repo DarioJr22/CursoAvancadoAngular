@@ -33,6 +33,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ButtonComponent } from './button/button.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle'
 
 @NgModule({
     declarations:[
@@ -48,7 +50,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         SideBarComponent,
         ButtonComponent,
         CheckboxComponent,
-        SideBarComponent
+        SideBarComponent,
+        AvatarComponent
 
     ],
     imports:[
@@ -58,6 +61,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         RouterModule,
         DropdownModule,
         FormsModule,
+        RouterModule,
         //Angular Material
         MatButtonModule,
         MatCardModule,
@@ -77,7 +81,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         MatMenuModule,
         MatTreeModule,
         MatButtonModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatSlideToggleModule
         //Adaptações do material -- Customização de componentes
 
 

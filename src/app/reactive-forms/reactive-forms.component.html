@@ -6,44 +6,44 @@
 <form action="get" autocomplete="off"  [formGroup]="registroForm">
     <div>
         <label for="Nome">Nome</label>
-        <input 
+        <input
         formControlName="nome"
         class="form-control"
-        [ngClass]="{'is-invalid':displayMessage['nome']}" 
-        type="text" 
+        [ngClass]="{'is-invalid':displayMessage['nome']?.mensagem}"
+        type="text"
         id="Nome"
         >
         <div  class="text-danger" *ngIf="displayMessage['nome']">
-            <p [innerHTML]="displayMessage['nome']"></p>
-        </div> 
+            <p [innerHTML]="displayMessage['nome']?.mensagem"></p>
+        </div>
     </div>
 
     <div>
         <label for="Email">Email</label>
-        <input class="form-control" 
-        [ngClass]="{'is-invalid':displayMessage['email']}"  
+        <input class="form-control"
+        [ngClass]="{'is-invalid':displayMessage['email']}"
         formControlName="email"
         type="text" id="Email">
         <div class="text-danger" *ngIf="displayMessage['email']">
-            <p [innerHTML]="displayMessage['email']"></p>
+            <p [innerHTML]="displayMessage['email']?.mensagem"></p>
         </div>
     </div>
 
     <div>
-        
+
         <label for="CPF">CPF</label>
-        <input 
+        <input
         formControlName="cpf"
         class="form-control"
-        [ngClass]="{'is-invalid':displayMessage['cpf']}"  
+        [ngClass]="{'is-invalid':displayMessage['cpf']}"
         type="text" id="CPF">
         <div class="text-danger" *ngIf="displayMessage['cpf']">
-            <p [innerHTML]="displayMessage['cpf']"></p>
+            <p [innerHTML]="displayMessage['cpf']?.mensagem"></p>
         </div>
     </div>
 
     <div>
-        
+
         <label for="Numero">Senha</label>
         <input
          class="form-control"
@@ -51,13 +51,13 @@
          [ngClass]="{'is-invalid':displayMessage['senha']}"
           type="password" id="Num">
           <span class="text-danger" *ngIf="displayMessage['senha']">
-                <p [innerHTML]="displayMessage['senha']"></p>
+                <p [innerHTML]="displayMessage['senha']?.mensagem"></p>
           </span>
     </div>
 
-    
+
     <div>
-        
+
         <label for="Numero">Senha confirmação</label>
         <input
          class="form-control"
@@ -65,11 +65,11 @@
          [ngClass]="{'is-invalid':displayMessage['senhaConfirm']}"
         type="password">
         <span class="text-danger" *ngIf="displayMessage['senhaConfirm']">
-        <p [innerHTML]="displayMessage['senhaConfirm']"></p>
+        <p [innerHTML]="displayMessage['senhaConfirm']?.mensagem"></p>
         </span>
     </div>
 
-    <button (click)="addUser()" class="btn btn-success"> Submit</button>
+    <button (click)="addUser()" id="submit" class="btn btn-success"> Submit</button>
     <button (click)="registroForm.reset()" class="btn btn-danger">Limpar</button>
 
     <div>

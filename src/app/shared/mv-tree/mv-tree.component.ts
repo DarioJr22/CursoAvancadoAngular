@@ -6,7 +6,9 @@ import { files } from './example-data';
 /** File node data with possible child nodes. */
 export interface FileNode {
   name: string;
+  rota:string;
   type: string;
+  icon:string;
   children?: FileNode[];
 }
 
@@ -17,7 +19,9 @@ export interface FileNode {
 export interface FlatTreeNode {
   name: string;
   type: string;
+  rota:string;
   level: number;
+  icon:string;
   expandable: boolean;
 }
 
@@ -35,7 +39,7 @@ export class MvTreeComponent {
   treeFlattener: MatTreeFlattener<FileNode, FlatTreeNode>;
 
   /** The MatTreeFlatDataSource connects the control and flattener to provide data. */
-  dataSource: MatTreeFlatDataSource<FileNode, FlatTreeNode>;
+  dataSource: any;
 
   constructor() {
     this.treeFlattener = new MatTreeFlattener(
@@ -54,6 +58,8 @@ export class MvTreeComponent {
     return {
       name: node.name,
       type: node.type,
+      rota:node.rota,
+      icon:node.icon,
       level,
       expandable: !!node.children
     };
@@ -77,5 +83,10 @@ export class MvTreeComponent {
   /** Get the children for the node. */
   getChildren(node: FileNode): FileNode[] | null | undefined {
     return node.children;
+  }
+
+  teste(e:any){
+    console.log(e);
+
   }
 }

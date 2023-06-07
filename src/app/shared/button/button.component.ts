@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'mv-button',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
+  @Output()click:EventEmitter<any> = new EventEmitter()
+  @Input()name!:string
+
+
+  onClick(): void{
+    this.click.emit()
+  }
 
 }
