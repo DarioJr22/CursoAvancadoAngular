@@ -18,6 +18,7 @@ $color-neutral-medium: #919191;
 $color-neutral-light: #D1D1D1;
 $color-neutral-lightest: #FFFFFF;
 
+
 // Feedback colors
 $color-feedback-danger-dark: #871E1E;
 $color-feedback-danger-medium: #D32F2F;
@@ -34,3 +35,33 @@ $color-feedback-warning-light: #FFF4E5;
 $color-feedback-info-dark: #003166;
 $color-feedback-info-medium: #004FA3;
 $color-feedback-info-light: #EBF4FF;
+
+//Palete
+$mv-light-palette:(
+  50:#12ffdf,
+  100:#10deb5,
+  200:#0db896,
+  300:#0c9176,
+  400:#06614f,
+  500:#0c5c4c,
+  600:#064d3e,
+  700:#064639,
+  800:#063b31,
+  900:#042c24,
+  A100:#042921,
+  A200:#03221c,
+  contrast:(
+    50:$color-neutral-darkest,
+    100:$color-neutral-darkest,
+    200:$color-neutral-darkest,
+    300:$color-neutral-darkest,
+    400:$color-neutral-lightest,
+    500:$color-neutral-lightest,
+    600:$color-neutral-lightest,
+    700:$color-neutral-lightest,
+    800:$color-neutral-lightest,
+    900:$color-neutral-lightest,
+    A100:$color-neutral-lightest,
+    A200:$color-neutral-lightest,
+  )
+)
