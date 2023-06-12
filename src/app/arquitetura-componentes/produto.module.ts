@@ -8,11 +8,12 @@ import { ProdutoRoutingModule } from "./produto.routing.module";
 import { LibComponentComponent } from "./lib-component/lib-component.component";
 import { SharedModule } from "../shared/shared.module";
 import Utils from "../shared/models/Util/Utils";
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 @NgModule({
     declarations:[
         ProdutoDashboardComponent,
-
+        EditarProdutoComponent,
         LibComponentComponent
     ],
     imports:[

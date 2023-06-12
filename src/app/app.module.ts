@@ -13,6 +13,8 @@ import { ProdutoModule } from './arquitetura-componentes/produto.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     RxjsObsComponent,
     ReactiveFormsComponent,
+    NotFoundComponentComponent,
+    LoginComponent,
 
 
 

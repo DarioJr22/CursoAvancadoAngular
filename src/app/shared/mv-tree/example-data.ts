@@ -14,12 +14,12 @@ export const files = [
         name: 'Componentes prontos',
         type: 'link',
         icon:'developer_board',
-        rota:''
+        rota:'/produtos'
       },
       {
         name: 'Componentes Individuais',
         type: 'link',
-        rota:'',
+        rota:'/produtos',
         icon:'developer_board'
       }
     ]

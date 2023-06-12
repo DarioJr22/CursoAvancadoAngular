@@ -1,0 +1,84 @@
+
+@import "../../../assets/styleCustom/core/shadows";
+@import "../../../assets/styleCustom/core/colors";
+
+
+//Responsividade
+
+
+
+@media screen and (min-width:720px){
+
+  .gridMain{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 2rem;
+    margin: 2rem;
+
+      .item{
+        display: grid;
+        align-items: stretch;
+        justify-items: stretch;
+        box-shadow: $shadow-level-0;
+        border: 1px solid $color-neutral-light;
+        min-width: 10px;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+    }
+    .item.result{
+      display: grid;
+      justify-self: center;
+      grid-column: 1 /span 2;
+    }
+
+}
+
+@media screen and (max-width:720px){
+
+  .gridMain{
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr  ;
+    grid-gap: 2rem;
+    margin: 2rem;
+    transition: grid-template-columns .5s ease;
+
+
+      .item{
+
+        display: grid;
+        align-items: stretch;
+        justify-items: stretch;
+        box-shadow: $shadow-level-0;
+        border: 1px solid $color-neutral-light;
+        border-radius: 0.6rem;
+        padding: 1rem;
+        transition: all .5s ease;
+      }
+
+      .item.result{
+        grid-column: 1fr span 2;
+      }
+    }
+
+}
+
+//Tematização
+
+//Estruturação
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+
+
+
+
+

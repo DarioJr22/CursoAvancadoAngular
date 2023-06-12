@@ -20,6 +20,7 @@ export class LibComponentComponent implements OnInit {
   lista:ValueField[] = [];
   form!:FormGroup;
   Utils!:Utils
+  colorPrefers = localStorage.getItem('colorScheme')
 
   //Mensageria
   validationMessages!:ValidationMessages;
@@ -34,7 +35,7 @@ export class LibComponentComponent implements OnInit {
   formBuild(){
     this.form = this.fb.group({
       dropdownComum:['',[Validators.required]],
-      dropdownMultiValorado:['',[Validators.required]],
+      dropdownMult:['',[Validators.required]],
       inputNumberComum:['',[Validators.required,Validators.minLength(4)]],
       textareaComum:['',[Validators.required,Validators.maxLength(23)]],
       inputTextComum:['',[Validators.required,Validators.email]],
@@ -45,6 +46,9 @@ export class LibComponentComponent implements OnInit {
     this.validationMessages = {
       dropdownComum:{
         required: Mgs.CAMPO_OBRIGATORIO,
+      },
+      dropdownMult:{
+        required:Mgs.CAMPO_OBRIGATORIO
       },
       inputNumberComum:{
         required:Mgs.CAMPO_OBRIGATORIO,
@@ -57,7 +61,8 @@ export class LibComponentComponent implements OnInit {
       inputTextComum:{
         required:Mgs.CAMPO_OBRIGATORIO,
         email:Mgs.EMAIL_INVALIDO
-      }
+      },
+
     }
     //2º - Validação por campo
     this.genericValidator = new GenericValidator(this.validationMessages);
@@ -70,6 +75,7 @@ export class LibComponentComponent implements OnInit {
   ngOnInit(): void {
     this.formBuild();
     this.getProdutos();
+    console.log(this.colorPrefers);
 
   }
 
@@ -147,12 +153,12 @@ export class LibComponentComponent implements OnInit {
     //$====== Dropdown Multi Valorado ======$
 
     get DropdownMultiValorado(){
-      return Utils.convertToFormControl(this.form.get('dropdownMultiValorado'));
+      return Utils.convertToFormControl(this.form.get('dropdownMult'));
     }
 
     //GetDropdownMultiValorado Value
     getDropdownMultiValoradoValue() {
-      this.displayMessage = this.genericValidator.processarMensagens(this.form)
+      this.getValidations()
     }
 
 

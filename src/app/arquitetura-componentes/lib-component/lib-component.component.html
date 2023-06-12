@@ -1,10 +1,14 @@
 
 <!-- Grid container -->
-<div class="component-schemas-library">
 
-  <h2>Componentes prontos</h2>
+<div class="header">
+  <h1 >Componentes prontos</h1>
+</div>
+
+<div class="gridMain">
+
   <!-- Grid item  -->
-  <div class="item-a">
+  <div class="item">
     <mat-card>
       <h3>Formulário de endereço</h3>
       <app-mv-form-schematics>
@@ -14,7 +18,7 @@
   </div>
 
   <!-- Grid item  -->
-  <div class="item-b">
+  <div class="item">
     <mat-card>
       <h3>Dashboard</h3>
       <app-mv-dashboard>
@@ -23,7 +27,7 @@
   </div>
 
 
- <div class="item-c">
+ <div class="item">
   <mat-card>
     <h3>Tabela</h3>
     <app-mv-table>
@@ -31,7 +35,7 @@
   </mat-card>
  </div>
 
-  <div class="item-d">
+  <div class="item">
     <mat-card>
       <h3>Three</h3>
       <app-mv-tree>
@@ -40,21 +44,23 @@
   </div>
 </div>
 
-<div >
-  <form [formGroup]="form" action="" class="component-library">
+<div>
+  <h2 class="header">Proposta de inputs</h2>
+  <form [formGroup]="form"  class="gridMain">
 
-    <h1 class="header-2">Proposta de inputs</h1>
-    <div class="item-a2">
+
+    <div class="item">
       <app-dropdown
         [nameField]="'Drop Down Comun'"
         [list]="lista"
         [disab]="false"
+        class="item-comp"
         [mensagem]="this.displayMessage['dropdownComum']"
         [control]="this.dropDown"
         (selected)="getDropDownValue()">
       </app-dropdown>
     </div>
-    <div class="item-b2">
+    <div class="item">
       <app-inputnumber
       [nameField]="'Input Number comum'"
       [disab]="false"
@@ -63,7 +69,7 @@
       (selected)="getInputNumberValue()">
       </app-inputnumber>
     </div>
-    <div class="item-c2">
+    <div class="item">
       <app-inputtext
       [nameField]="'Input Text comum'"
       [disab]="false"
@@ -71,6 +77,18 @@
       [control]="this.inputText"
       (selected)="getInputTextValue()">
       </app-inputtext>
+    </div>
+
+    <div class="item">
+      <app-dropdown
+        [nameField]="'Drop Down MultiValorado'"
+        [list]="lista"
+        [disab]="false"
+        [mutiplo]="true"
+        [mensagem]="this.displayMessage['dropdownMult']"
+        [control]="this.DropdownMultiValorado"
+        (selected)="getDropdownMultiValoradoValue()">
+      </app-dropdown>
     </div>
 
   <!--   <div class="item-d2">
@@ -83,7 +101,7 @@
       </app-inputtext>
 
     </div> -->
-    <div class="item-e2">
+    <div class="item result">
       <pre>{{this.form.value | json}}</pre>
     </div>
 

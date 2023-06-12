@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="menu">
   <mat-sidenav style="position: fixed;padding: 2rem
   ;" #sideBar mode="side">
     <!-- Fechamento Click / NavBar -->
@@ -24,20 +24,28 @@
             <img height="70px" width="90px" src="../../../assets/imgs/Logo_MV_844x348_Colorida_CMYK.png">
         </div>
 
-        <button [mat-menu-trigger-for]="menu" mat-icon-button style="display: flex; align-items: center;" class="avatarUser">
-          <mat-icon>person</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
+        <div style="display: flex; align-items: center;">
+          <mat-slide-toggle (click)="switchMode()">
+            <mat-icon>{{darkMode ?'wb_sunny':'brightness_2'}}</mat-icon>
+          </mat-slide-toggle>
+          <button [mat-menu-trigger-for]="menu" mat-icon-button  class="avatarUser">
+            <mat-icon>person</mat-icon>
+          </button>
+        </div>
+
+
+        <mat-menu  #menu="matMenu">
           <button mat-menu-item>Item 1</button>
           <button mat-menu-item>Item 2</button>
-          <mat-slide-toggle>
-        Slide me!
-      </mat-slide-toggle>
+
         </mat-menu>
 
 
       </mat-toolbar>
-      <ng-content>
+      <ng-content class="conteudo">
       </ng-content>
+      <mv-footer class="rodape"></mv-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+

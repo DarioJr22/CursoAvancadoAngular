@@ -1,5 +1,5 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-  <mat-tree-node [id]="node.rota" (click)="teste(node)" [routerLink]="node.rota" *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+  <mat-tree-node [id]="node.rota" (click)="teste(node)" routerLinkActive="activeElement" [routerLink]="node.rota" *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
 
     <!-- <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
       {{ node.type === 'file' ? 'description' : 'folder' }}

@@ -34,7 +34,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ButtonComponent } from './button/button.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { AvatarComponent } from './avatar/avatar.component';
-import { MatSlideToggleModule} from '@angular/material/slide-toggle'
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
     declarations:[
@@ -51,7 +52,8 @@ import { MatSlideToggleModule} from '@angular/material/slide-toggle'
         ButtonComponent,
         CheckboxComponent,
         SideBarComponent,
-        AvatarComponent
+        AvatarComponent,
+        FooterComponent
 
     ],
     imports:[
