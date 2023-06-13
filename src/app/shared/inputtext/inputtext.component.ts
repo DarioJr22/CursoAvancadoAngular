@@ -13,9 +13,11 @@ export class InputtextComponent {
 @Input() initialValue:ValueField = {value:'',label:'' };
 @Input() nameField!:string;
 
+
+@Input() type!:string
+
 //Mensagens
 @Input() mensagem:MgsCampos = {mensagem:'',mensagemTipo:''};
-
 
 //Estado do componente
 @Input() disab:boolean = false;
@@ -23,15 +25,14 @@ export class InputtextComponent {
 //formControl
 @Input() control:FormControl = new FormControl(this.initialValue)
 
-
 //Output de dados do componente
 @Output() selected:EventEmitter<any> = new EventEmitter();
 
+
+
  //Function to be called when any changes ocurrs on component
- onChange = ( value:ValueField) => {
+ onChange = ( value:ValueField) => {}
 
-
- }
  handleDataChange(event:any){
    const dataSelected = event;
   /*  this.onChange(dataSelected) */

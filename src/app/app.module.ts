@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 
 @NgModule({
@@ -43,9 +44,12 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     ProdutoModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    //Mat-Module
+    MatCardModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
