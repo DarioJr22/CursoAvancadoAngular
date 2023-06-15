@@ -11,16 +11,22 @@ export const files = [
     type: 'pasta',
     children: [
       {
-        name: 'Componentes prontos',
+        name: 'Componentes Individuais',
+        type: 'link',
+        rota:'/produtos/lib-components',
+        icon:'developer_board'
+      }
+    ]
+  },
+  {
+    name: 'Estudos de caso',
+    type: 'pasta',
+    children: [
+      {
+        name: 'Produtos',
         type: 'link',
         icon:'developer_board',
         rota:'/produtos'
-      },
-      {
-        name: 'Componentes Individuais',
-        type: 'link',
-        rota:'/produtos',
-        icon:'developer_board'
       }
     ]
   }

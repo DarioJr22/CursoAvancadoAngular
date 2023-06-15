@@ -1,3 +1,4 @@
+<mv-notify></mv-notify>
 <div class="loginContainerWrapper">
   <mat-card class="loginContainer">
 
@@ -19,8 +20,7 @@
       [mensagem]="this.displayMessage['senha']"
       (selected)="getPassword()">
   </app-inputtext>
-  <button id="basic" type="button" mat-button >
-    Basic button
-  </button>
+      <button mat-raised-button color="primary" (click)="loginUser()">OK</button>
   </mat-card>
+
 </div>

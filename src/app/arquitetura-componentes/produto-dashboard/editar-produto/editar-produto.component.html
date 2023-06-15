@@ -1,0 +1,49 @@
+<mv-notify></mv-notify>
+<div class="cardProd">
+  <mat-card>
+    <div class="cardFlex" >
+      <div class="cardCabecalho">
+        <mat-card-header >
+        <mat-card-title>{{produto?.name}}</mat-card-title>
+        <mat-card-subtitle>{{produto?.fotografo}}</mat-card-subtitle>
+    </mat-card-header>
+
+      </div>
+
+      <div class="imgWrapper" >
+        <div class="imgWrapperGrid">
+          <img matCardImage style="display: block; object-fit: cover; border-radius: 0px; width: 100%; height: 40vh; opacity: 1; object-position: center 30%;" [src]="produto?.imagem">
+        </div>
+      </div>
+
+      <mat-card-content>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, modi doloremque. Sapiente dolorum repudiandae fugit odio quis quisquam assumenda tempora molestiae harum officia iste, aspernatur distinctio, maiores nisi maxime exercitationem?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores rem quibusdam officiis molestias quod facilis dolores rerum pariatur deserunt exercitationem commodi maxime molestiae sit porro nostrum magnam, incidunt soluta corporis.
+        lorem
+      </mat-card-content>
+
+    </div>
+  </mat-card>
+
+  <mat-card  >
+    <div style="display: flex; flex-direction: column; align-items: center; row-gap: 2rem;">
+      <div style="  white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;">
+        <mat-card-header>
+        <mat-card-title>{{10000}}</mat-card-title>
+    </mat-card-header>
+
+      </div>
+      <mat-card-content>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, modi doloremque. Sapiente dolorum repudiandae fugit odio quis quisquam assumenda tempora molestiae harum officia iste, aspernatur distinctio, maiores nisi maxime exercitationem?
+
+      </mat-card-content>
+      <mat-card-actions>
+        <mv-button (click)="backProdutos()" >
+          Comprar
+        </mv-button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

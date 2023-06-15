@@ -20,4 +20,13 @@ export class ProdutoDashboardService {
     return this.http.get(url,this.httpOptions)
   }
 
+  getImageByid(id:any){
+    const url = `https://api.pexels.com/v1/photos/${id}`
+    return this.http.get(url,this.httpOptions)
+  }
+
+  obterTodos(){
+
+  }
+
 }

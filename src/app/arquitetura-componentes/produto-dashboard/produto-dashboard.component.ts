@@ -42,7 +42,7 @@ export class ProdutoDashboardComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.produtoService.getImages('mobile',100).subscribe({
+    this.produtoService.getImages('hospital',100).subscribe({
       next:(a:any)=>{
          this.items = a.photos
         },
@@ -65,6 +65,10 @@ export class ProdutoDashboardComponent implements OnInit{
         a.liked = a.liked
       }
     )
+  }
+
+  editarObj(){
+
   }
 
 

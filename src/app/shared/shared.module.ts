@@ -36,6 +36,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FooterComponent } from './footer/footer.component'
+import { NotifyModule } from './notify/notify.module';
 
 @NgModule({
     declarations:[
@@ -53,7 +54,8 @@ import { FooterComponent } from './footer/footer.component'
         CheckboxComponent,
         SideBarComponent,
         AvatarComponent,
-        FooterComponent
+        FooterComponent,
+        ButtonComponent
 
     ],
     imports:[
@@ -64,6 +66,8 @@ import { FooterComponent } from './footer/footer.component'
         DropdownModule,
         FormsModule,
         RouterModule,
+        NotifyModule,
+        LayoutModule,
         //Angular Material
         MatButtonModule,
         MatCardModule,
@@ -71,7 +75,7 @@ import { FooterComponent } from './footer/footer.component'
         MatFormFieldModule,
         MatSelectModule,
         MatRadioModule,
-        LayoutModule,
+
         MatToolbarModule,
         MatSidenavModule,
         MatIconModule,
@@ -99,7 +103,11 @@ import { FooterComponent } from './footer/footer.component'
         InputtextComponent,
         MensagemComponent,
         InputnumberComponent,
-        SideBarComponent
+        SideBarComponent,
+        ButtonComponent
+    ],
+    providers:[
+      {provide:'ttlDefault',useValue:3000}
     ]
 })
 

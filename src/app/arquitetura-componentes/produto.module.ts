@@ -8,13 +8,17 @@ import { ProdutoRoutingModule } from "./produto.routing.module";
 import { LibComponentComponent } from "./lib-component/lib-component.component";
 import { SharedModule } from "../shared/shared.module";
 import Utils from "../shared/models/Util/Utils";
-import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
-
+import { EditarProdutoComponent } from './produto-dashboard/editar-produto/editar-produto.component';
+import { RouterModule } from '@angular/router';
+import { ProdutoComponent } from './produto-dashboard/produto/produto.component';
+import { NotifyModule } from '../shared/notify/notify.module';
 @NgModule({
     declarations:[
         ProdutoDashboardComponent,
+        LibComponentComponent,
         EditarProdutoComponent,
-        LibComponentComponent
+        ProdutoComponent
+
     ],
     imports:[
         CommonModule,
@@ -22,7 +26,10 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
         HttpClientModule,
         SharedModule,
         MatCardModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule,
+        NotifyModule
+
 
 
     ],

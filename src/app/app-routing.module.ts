@@ -4,6 +4,7 @@ import { RxjsObsComponent } from './rxjs-obs/rxjs-obs.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from 'src/assets/auth/app.guard';
 
 const routes: Routes = [
   {
@@ -12,17 +13,20 @@ const routes: Routes = [
   },
   {
     path:'rxjsobsevables',
-    component:RxjsObsComponent
+    component:RxjsObsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'reactiveForms',
-    component:ReactiveFormsComponent
+    component:ReactiveFormsComponent,
+    canActivate:[AuthGuard]
 
   },
   {
     path:'produtos',
     loadChildren:()=> import('./../app/arquitetura-componentes/produto.module')
-    .then(x => x.ProdutoModule)
+    .then(x => x.ProdutoModule),
+    canActivate:[AuthGuard]
   },
   {
     path:'**',
@@ -34,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

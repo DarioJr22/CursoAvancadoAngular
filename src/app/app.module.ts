@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
+import { NotifyModule } from './shared/notify/notify.module';
 
 
 @NgModule({
@@ -45,11 +46,16 @@ import { LoginService } from './login/login.service';
     ProdutoModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NotifyModule,
+
 
     //Mat-Module
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    { provide: 'ttlDefault', useValue: 5000 }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

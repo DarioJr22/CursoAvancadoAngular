@@ -30,8 +30,15 @@ export enum Mgs {
     TELEFONE_INVALIDO = 'Telefone inválido.',
     TELEFONE_VALIDO = 'Telefone válido.',
 
-    //Validação de celular
+    //Sucesso
 
-    // ...
+    SUCESSO = 'Processo realizado com sucesso.',
 
+    //Warning
+    WARN = 'Atenção !',
+    WARN_SEM_DADOS = 'Nenhum dado foi encontrado',
+
+
+    //Erro
+    ERRO_LOGIN = 'Usuário ou senha inválidos.',
 }
