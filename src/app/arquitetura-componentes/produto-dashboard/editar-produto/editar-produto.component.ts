@@ -59,7 +59,11 @@ export class EditarProdutoComponent  implements OnInit{
   backProdutos(){
     const notfication = {mensagem:Mgs.SUCESSO,tipo:NotificacaoType.SUCESSO}
     this.notify.notificar(notfication)
-    setTimeout(() => {this.router.navigate(['/produtos'])}, 3000);
+
+
+
+
+    /* setTimeout(() => {this.router.navigate(['/produtos'])}, 3000); */
   }
 
 }

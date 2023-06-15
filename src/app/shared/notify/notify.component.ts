@@ -25,10 +25,8 @@ export class NotifyComponent {
   close(n:number,tipo:HTMLElement){
   //Animation reverse para fechar a notificação - Ainda não resolvido
    tipo.style.cssText = 'animation-direction: reverse';
-
    //Fecha a notificação
    this.notificacoesService.closeNotify(n)
-
   }
 
 }

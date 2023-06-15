@@ -1,5 +1,6 @@
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { NotifyModule } from './shared/notify/notify.module';
+import { MatDivider } from '@angular/material/divider';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { NotifyModule } from './shared/notify/notify.module';
     ReactiveFormsComponent,
     NotFoundComponentComponent,
     LoginComponent,
+
 
 
 
@@ -51,7 +54,9 @@ import { NotifyModule } from './shared/notify/notify.module';
 
     //Mat-Module
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
+
   ],
   providers: [
     LoginService,

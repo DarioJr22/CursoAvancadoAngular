@@ -12,6 +12,7 @@ import { EditarProdutoComponent } from './produto-dashboard/editar-produto/edita
 import { RouterModule } from '@angular/router';
 import { ProdutoComponent } from './produto-dashboard/produto/produto.component';
 import { NotifyModule } from '../shared/notify/notify.module';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     declarations:[
         ProdutoDashboardComponent,
@@ -28,7 +29,8 @@ import { NotifyModule } from '../shared/notify/notify.module';
         MatCardModule,
         ReactiveFormsModule,
         RouterModule,
-        NotifyModule
+        NotifyModule,
+        MatDialogModule
 
 
 

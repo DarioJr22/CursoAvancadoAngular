@@ -26,7 +26,8 @@ const routes: Routes = [
     path:'produtos',
     loadChildren:()=> import('./../app/arquitetura-componentes/produto.module')
     .then(x => x.ProdutoModule),
-    canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    canMatch:[AuthGuard]
   },
   {
     path:'**',

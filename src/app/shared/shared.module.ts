@@ -37,6 +37,8 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FooterComponent } from './footer/footer.component'
 import { NotifyModule } from './notify/notify.module';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     declarations:[
@@ -55,7 +57,8 @@ import { NotifyModule } from './notify/notify.module';
         SideBarComponent,
         AvatarComponent,
         FooterComponent,
-        ButtonComponent
+        ButtonComponent,
+        DialogComponent
 
     ],
     imports:[
@@ -88,7 +91,8 @@ import { NotifyModule } from './notify/notify.module';
         MatTreeModule,
         MatButtonModule,
         MatSidenavModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatDialogModule
         //Adaptações do material -- Customização de componentes
 
 
