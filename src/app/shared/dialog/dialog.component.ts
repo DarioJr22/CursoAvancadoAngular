@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { Component, EventEmitter, Output ,Inject} from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+
 
 @Component({
   selector: 'mv-dialog',
@@ -6,16 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  data:any = {};
-  _OnclickYes(){
 
-  }
+  constructor(
+    public dialogRef:MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any) { }
 
-  _OnclickNo(){
+    _OnclickYes(){
+      console.log(this.data);
 
-  }
+      this.dialogRef.close(true)
+    }
 
-
-  constructor() { }
-
+    _OnclickNo(): void {
+      this.dialogRef.close(false);
+    }
 }

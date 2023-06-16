@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { NotifyModule } from './shared/notify/notify.module';
 import { MatDivider } from '@angular/material/divider';
+import { PipesComponent } from './pipes/pipes.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatDivider } from '@angular/material/divider';
     ReactiveFormsComponent,
     NotFoundComponentComponent,
     LoginComponent,
+    PipesComponent,
 
 
 

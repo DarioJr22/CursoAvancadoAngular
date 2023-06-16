@@ -6,7 +6,7 @@ import { LibComponentComponent } from './lib-component/lib-component.component';
 import { EditarProdutoComponent } from './produto-dashboard/editar-produto/editar-produto.component';
 import { ProdutoComponent } from './produto-dashboard/produto/produto.component';
 import { ProdutoResolve } from './produto-dashboard/services/produto.resolve';
-import { AuthGuard } from 'src/assets/auth/app.guard';
+import { AuthGuard, canDeactive } from 'src/assets/auth/app.guard';
 
 const produtoRouterConfig: Routes = [
 
@@ -27,7 +27,7 @@ const produtoRouterConfig: Routes = [
             password:window.localStorage.getItem('password'),
           }
         },
-        canDeactivate:[AuthGuard]
+        canDeactivate:[canDeactive]
       },
       {
         path:'lib-components',

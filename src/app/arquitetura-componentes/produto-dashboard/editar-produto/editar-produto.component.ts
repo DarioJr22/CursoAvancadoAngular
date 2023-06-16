@@ -5,6 +5,9 @@ import { NotifyService } from '../../../shared/notify/service/notify.service';
 import { NotificacaoType } from '../../../shared/notify/service/Inotify';
 import { Mgs } from 'src/app/shared/models/Enum/mensagens';
 import { map, Observable, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
+import { set } from 'cypress/types/lodash';
 
 @Component({
   selector: 'mv-editar-produto',
@@ -18,7 +21,8 @@ export class EditarProdutoComponent  implements OnInit{
     private route:ActivatedRoute,
     private produtoService:ProdutoDashboardService,
     private router:Router,
-    private notify:NotifyService){}
+    private notify:NotifyService,
+    private dialog:MatDialog){}
 
 
   ngOnInit(): void {
@@ -59,11 +63,21 @@ export class EditarProdutoComponent  implements OnInit{
   backProdutos(){
     const notfication = {mensagem:Mgs.SUCESSO,tipo:NotificacaoType.SUCESSO}
     this.notify.notificar(notfication)
-
-
-
-
-    /* setTimeout(() => {this.router.navigate(['/produtos'])}, 3000); */
+    setTimeout(() => {this.router.navigate(['/produtos'])}, 3000);
   }
+
+  openDialog(){
+    const dialogRef = this.dialog.open(DialogComponent,{
+      data:{
+            title:'Atenção',
+            content:'Deseja realmente editar este produto'
+          }
+        }
+      )
+
+      dialogRef.afterClosed().subscribe( result => {
+        result ? this.backProdutos() : null
+      })
+    }
 
 }
