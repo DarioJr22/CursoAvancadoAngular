@@ -30,6 +30,11 @@ const routes: Routes = [
     canMatch:[AuthGuard]
   },
   {
+    path:'pipes',
+    loadChildren:()=> import('./../app/pipe/estudo-pipes/estudo-pipes.module')
+    .then(x => x.EstudoPipesModule)
+  },
+  {
     path:'**',
     component:NotFoundComponentComponent
   }

@@ -19,7 +19,9 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { NotifyModule } from './shared/notify/notify.module';
 import { MatDivider } from '@angular/material/divider';
-import { PipesComponent } from './pipes/pipes.component';
+import { EstudoPipesComponent } from './pipe/estudo-pipes/estudo-pipes.component';
+import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { PipesComponent } from './pipes/pipes.component';
     ReactiveFormsComponent,
     NotFoundComponentComponent,
     LoginComponent,
-    PipesComponent,
+
+
 
 
 
@@ -52,6 +55,7 @@ import { PipesComponent } from './pipes/pipes.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NotifyModule,
+    EstudoPipesModule,
 
 
     //Mat-Module

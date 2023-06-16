@@ -1,0 +1,90 @@
+<div>
+  <h2 class="header">Estudos de Pipes</h2>
+
+  <form  [formGroup]="formPipes" class="gridMain">
+  <div class="item">
+    <app-inputtext
+      [control]="this.nome"
+      [disab]="false"
+      [mensagem]="this.displayMessage['nome']"
+      [nameField]="'Nome'"
+      (selected)="getValidations()">
+    </app-inputtext>
+  </div>
+  <div class="item">
+    <app-inputtext
+      [control]="this.dataNascimento"
+      [disab]="false"
+      [mensagem]="this.displayMessage['dataNascimento']"
+      [nameField]="'Data de Nascimento'"
+      (selected)="getValidations()">
+    </app-inputtext>
+  </div>
+  <div class="item">
+    <app-inputtext
+      [control]="this.email"
+      [disab]="false"
+      [mensagem]="this.displayMessage['email']"
+      [nameField]="'Email'"
+      (selected)="getValidations()">
+    </app-inputtext>
+  </div>
+  <div class="item">
+    <app-inputtext
+      [control]="this.telefone"
+      [disab]="false"
+      [mensagem]="this.displayMessage['telefone']"
+      [nameField]="'Telefone'"
+      (selected)="getValidations()">
+    </app-inputtext>
+  </div>
+  <div>
+    <mv-button (click)="submit()">
+    </mv-button>
+  </div>
+</form>
+<div>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input [formControl]="filtro" matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+      <td mat-cell *matCellDef="let row">{{row.title}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Thumbnail</th>
+      <td mat-cell *matCellDef="let row"><img [src]="row.thumbnailUrl"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="thumbnailUrl">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
+      <td mat-cell *matCellDef="let row">{{dataDeHoje}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+
+    <tr class="mat-row" matNoDataRow>
+      <td class="mat-cell" colspan="4">No data maching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5,10,20,50,100]" aria-label="Seelect bla bla"></mat-paginator>
+</div>
+
+
+</div>

@@ -7,27 +7,28 @@ export const files = [
     icon:'library_books'
   },
   {
-    name: 'Livraria de Componentes',
-    type: 'pasta',
-    children: [
-      {
-        name: 'Componentes Individuais',
-        type: 'link',
-        rota:'/produtos/lib-components',
-        icon:'developer_board'
-      }
-    ]
-  },
-  {
     name: 'Estudos de caso',
     type: 'pasta',
     children: [
       {
-        name: 'Produtos',
+        name: 'Produtos - (Estudo de grid)',
+        type: 'link',
+        icon:'dashboard',
+        rota:'/produtos'
+      },
+      {
+        name: 'Componentes Individuais - (Estudo de Componentes)',
         type: 'link',
         icon:'developer_board',
-        rota:'/produtos'
+        rota:'/produtos/lib-components'
+      },
+      {
+        name: 'Componentes Individuais - (Estudo de Pipes)',
+        type: 'link',
+        icon:'compare_arrows',
+        rota:'/pipes'
       }
+
     ]
   }
 ];
