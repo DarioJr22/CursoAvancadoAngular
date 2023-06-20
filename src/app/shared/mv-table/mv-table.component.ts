@@ -3,6 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { MvTableDataSource, MvTableItem } from './mv-table-datasource';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt-BR');
+import {registerLocaleData} from '@angular/common';
 
 @Component({
   selector: 'app-mv-table',

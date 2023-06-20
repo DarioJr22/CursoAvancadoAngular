@@ -57,6 +57,16 @@
       }
     }
 
+    //table Grid
+    .table{
+      display: grid;
+      width: 97%;
+      grid-template-columns: 1 / 1 /auto / auto;
+      margin: 2rem;
+
+      box-shadow: $shadow-level-0;
+    }
+
 }
 
 @media screen and (max-width:720px){
@@ -122,6 +132,10 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+}
+
+.table{
+
 }
 
 

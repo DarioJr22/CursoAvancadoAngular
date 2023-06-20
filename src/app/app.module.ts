@@ -4,6 +4,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt-BR');
+import {registerLocaleData} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +24,8 @@ import { NotifyModule } from './shared/notify/notify.module';
 import { MatDivider } from '@angular/material/divider';
 import { EstudoPipesComponent } from './pipe/estudo-pipes/estudo-pipes.component';
 import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
 
 
 
@@ -66,7 +71,15 @@ import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
   ],
   providers: [
     LoginService,
-    { provide: 'ttlDefault', useValue: 5000 }],
+    {
+    provide: 'ttlDefault',
+    useValue: 5000
+    },
+    {
+      provide:MatPaginatorIntl,
+      useClass:CustomMatPaginatorIntl
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

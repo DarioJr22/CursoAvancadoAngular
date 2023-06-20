@@ -39,6 +39,10 @@ import { FooterComponent } from './footer/footer.component'
 import { NotifyModule } from './notify/notify.module';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt-BR');
+import {registerLocaleData} from '@angular/common';
+
 
 @NgModule({
     declarations:[

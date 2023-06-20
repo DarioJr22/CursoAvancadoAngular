@@ -13,6 +13,10 @@ import { RouterModule } from '@angular/router';
 import { ProdutoComponent } from './produto-dashboard/produto/produto.component';
 import { NotifyModule } from '../shared/notify/notify.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt-BR');
+import {registerLocaleData} from '@angular/common';
+
 @NgModule({
     declarations:[
         ProdutoDashboardComponent,
