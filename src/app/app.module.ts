@@ -26,6 +26,8 @@ import { EstudoPipesComponent } from './pipe/estudo-pipes/estudo-pipes.component
 import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
+import { DlZonasProvidersComponent } from './dl-zonas-providers/dl-zonas-providers.component';
+import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
 
 
 
@@ -61,6 +63,7 @@ import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
     BrowserAnimationsModule,
     NotifyModule,
     EstudoPipesModule,
+    ZonasModuleModule,
 
 
     //Mat-Module

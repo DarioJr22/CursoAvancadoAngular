@@ -35,6 +35,10 @@ const routes: Routes = [
     .then(x => x.EstudoPipesModule)
   },
   {
+    path:'zonas',
+    loadChildren:()=> import('./../app/dl-zonas-providers/zonas-module.module').then(x=>x.ZonasModuleModule)
+  },
+  {
     path:'**',
     component:NotFoundComponentComponent
   }

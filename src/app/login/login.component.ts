@@ -12,7 +12,9 @@ import { set } from 'cypress/types/lodash';
 @Component({
   selector: 'mv-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers:[ ]
+
 })
 export class LoginComponent implements OnInit{
   formLogin!:FormGroup;
