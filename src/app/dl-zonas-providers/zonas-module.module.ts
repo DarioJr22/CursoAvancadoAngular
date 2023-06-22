@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DlZonasProvidersComponent } from './dl-zonas-providers.component';
+import { ZonasRoutingModule } from './zonas-module.routing.module copy';
 
 
 
@@ -9,7 +10,8 @@ import { DlZonasProvidersComponent } from './dl-zonas-providers.component';
     DlZonasProvidersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ZonasRoutingModule
   ],
   exports:[
     DlZonasProvidersComponent

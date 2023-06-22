@@ -14,4 +14,4 @@ const routes:Routes = [
   ],
 
 })
-export class ZonasModuleModule { }
+export class ZonasRoutingModule { }

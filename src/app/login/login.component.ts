@@ -29,12 +29,10 @@ export class LoginComponent implements OnInit{
 
   //Construtor do compoente
 
-  constructor(
-    private fb: FormBuilder,
+  constructor(private fb: FormBuilder,
     private loginService:LoginService,
     private notify:NotifyService,
-    private router:Router
-  )
+    private router:Router)
   {
 
   }
