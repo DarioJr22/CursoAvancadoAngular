@@ -2,7 +2,7 @@ export enum Mgs {
     ERRO_SALVAR = 'Erro ao salvar',
     //Estado do campo
     CAMPO_VAZIO = 'Campo obrigatário não informado',
-    CAMPO_OBRIGATORIO='Campo obrigatório !',
+    CAMPO_OBRIGATORIO='outro campo ob',
     CAMPO_INVALID='Campo inválido !',
     CAMPO_VALIDO='Campo válido !',
 

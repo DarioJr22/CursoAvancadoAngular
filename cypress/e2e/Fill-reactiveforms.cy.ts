@@ -2,6 +2,9 @@ describe('Fill Reactive forms',()=>{
   it('Navigate until page',()=>{
     //Visita o endereço
     cy.visit('/')
+    cy.get('#id').type("admin")
+    cy.get('#senha').type("admin")
+    cy.get('#button').click()
 
     //Clica no menu da toolbar
     cy.get('#MenuToggle').click()

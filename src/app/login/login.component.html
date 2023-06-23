@@ -7,20 +7,22 @@
     </mat-card-title>
 
     <app-inputtext
-    [nameField]="'Email'"
+      id="id"
+      [nameField]="'Email'"
       [type]="'text'"
       [control]="this.login"
       [mensagem]="this.displayMessage['login']"
       (selected)="getLogin()">
   </app-inputtext>
     <app-inputtext
-    [nameField]="'Senha'"
+      id="senha"
+      [nameField]="'Senha'"
       [type]="'password'"
       [control]="this.senha"
       [mensagem]="this.displayMessage['senha']"
       (selected)="getPassword()">
   </app-inputtext>
-      <button mat-raised-button color="primary" (click)="loginUser()">OK</button>
+      <button mat-raised-button id="button" color="primary" (click)="loginUser()">OK</button>
   </mat-card>
 
 </div>

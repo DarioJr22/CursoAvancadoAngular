@@ -1,4 +1,3 @@
-import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,12 +20,9 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { NotifyModule } from './shared/notify/notify.module';
-import { MatDivider } from '@angular/material/divider';
-import { EstudoPipesComponent } from './pipe/estudo-pipes/estudo-pipes.component';
 import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
-import { DlZonasProvidersComponent } from './dl-zonas-providers/dl-zonas-providers.component';
 import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
 
 
@@ -38,12 +34,6 @@ import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
     ReactiveFormsComponent,
     NotFoundComponentComponent,
     LoginComponent,
-
-
-
-
-
-
 
    /*  InputtextComponent,
     InputnumberComponent,

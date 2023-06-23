@@ -82,7 +82,6 @@ import {registerLocaleData} from '@angular/common';
         MatFormFieldModule,
         MatSelectModule,
         MatRadioModule,
-
         MatToolbarModule,
         MatSidenavModule,
         MatIconModule,
@@ -107,12 +106,12 @@ import {registerLocaleData} from '@angular/common';
       MvDashboardComponent,
       MvTreeComponent,
       MvFormSchematicsComponent,
-        DropdownComponent,
-        InputtextComponent,
-        MensagemComponent,
-        InputnumberComponent,
-        SideBarComponent,
-        ButtonComponent
+      DropdownComponent,
+      InputtextComponent,
+      MensagemComponent,
+      InputnumberComponent,
+      SideBarComponent,
+      ButtonComponent
     ],
     providers:[
       {provide:'ttlDefault',useValue:3000}
