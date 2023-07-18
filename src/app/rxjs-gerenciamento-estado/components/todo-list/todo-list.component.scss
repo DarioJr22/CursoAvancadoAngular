@@ -1,0 +1,36 @@
+
+
+.task-list{
+  width: auto;
+  background: #fff;
+  box-shadow: 0 16px 24px 0 black;
+}
+
+.task-list h3{
+  background: purple;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 0.0rem;
+}
+
+.task-list__finalizado{
+  width: auto;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  background-size: 20px 20px;
+}
+
+.task-list__iniciado{
+  width: auto;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  background-size: 20px 20px;
+}
+table{
+  width: auto;
+}

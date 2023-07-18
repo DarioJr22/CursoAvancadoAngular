@@ -39,6 +39,10 @@ const routes: Routes = [
     loadChildren:()=> import('./../app/dl-zonas-providers/zonas-module.module').then(x=>x.ZonasModuleModule)
   },
   {
+    path:'statemenagement',
+    loadChildren:()=> import('./../app/rxjs-gerenciamento-estado/rxjs-gerenciamento-estado.module').then(x => x.RxjsGerenciamentoModule)
+  },
+  {
     path:'**',
     component:NotFoundComponentComponent
   }

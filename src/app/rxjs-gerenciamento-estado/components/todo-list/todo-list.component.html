@@ -4,9 +4,12 @@
   </h3>
   <table class="table table-striped">
     <tbody>
-      <tr *ngFor="let i of list">
+      <tr *ngFor="let i of task">
         <td>
-          <span>{{i.nome}}</span>
+          <span>{{i.id}}</span>
+        </td>
+        <td>
+          <span>{{i.name}}</span>
         </td>
       </tr>
     </tbody>

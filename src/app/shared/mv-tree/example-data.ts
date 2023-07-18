@@ -27,6 +27,12 @@ export const files = [
         type: 'link',
         icon:'compare_arrows',
         rota:'/pipes'
+      },
+      {
+        name: 'Gerenciamento de estado - (Estudo de RXJS)',
+        type: 'link',
+        icon:'compare_arrows',
+        rota:'/statemenagement'
       }
 
     ]

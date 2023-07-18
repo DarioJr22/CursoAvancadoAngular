@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Task } from '../../task';
 
 @Component({
   selector: 'mv-todo-list',
@@ -6,5 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent {
-//@Input() task:Task[]
+@Input() task:Task[] | null = []
+
 }
