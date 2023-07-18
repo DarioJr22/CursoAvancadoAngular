@@ -9,6 +9,7 @@ import { ToDoService } from "./rxjs-gerenciamento-estado.service";
 import { SharedModule } from "primeng/api";
 import { AsyncPipe, CommonModule } from "@angular/common";
 import { Store } from "./task";
+import { MatIcon, MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { Store } from "./task";
     RxjsGerenciamentoRoutingModule,
     SharedModule,
     AsyncPipe,
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   providers:[
     ToDoService,

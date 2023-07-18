@@ -16,7 +16,7 @@ constructor(private todoServ:ToDoService){
 
 ngOnInit(): void {
   this.todolist$ = this.todoServ.getTask$
-  this.todolist$.subscribe(I=> console.log(I))
+
 
 
 }

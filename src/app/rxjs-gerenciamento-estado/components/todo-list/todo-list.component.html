@@ -4,13 +4,29 @@
   </h3>
   <table class="table table-striped">
     <tbody>
-      <tr *ngFor="let i of task">
+      <tr class="d-flex justify-content-space-between" *ngFor="let i of task">
         <td>
           <span>{{i.id}}</span>
         </td>
-        <td>
+        <td class="d-flex justify-content-space-between">
           <span>{{i.name}}</span>
+
         </td>
+        <span *ngIf="i.task_ini && !i.task_fin" class="task-list_finalizado">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </span>
+
+        <span *ngIf="!i.task_ini && !i.task_fin" class="task-list_iniciado">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </span>
+
+        <span *ngIf="!i.task_ini && i.task_fin" class="task-list_retroceder">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </span>
+
+        <span *ngIf="!i.task_ini && !i.task_fin" class="task-list_retroceder">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </span>
       </tr>
     </tbody>
   </table>

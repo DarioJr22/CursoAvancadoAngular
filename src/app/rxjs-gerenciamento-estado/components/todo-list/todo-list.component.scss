@@ -1,5 +1,19 @@
 
+.dark-mode{
+  .task-list{
+    width: auto;
+    background: #1c1c1d;
+    box-shadow: 0 16px 24px 0 black;
+  }
 
+  .task-list h3{
+    background: purple;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0.0rem;
+  }
+}
 .task-list{
   width: auto;
   background: #fff;
@@ -17,7 +31,7 @@
 .task-list__finalizado{
   width: auto;
   height: 20px;
-  position: absolute;
+  position: relative;
   right: 20px;
   cursor: pointer;
   background-size: 20px 20px;
@@ -26,11 +40,59 @@
 .task-list__iniciado{
   width: auto;
   height: 20px;
-  position: absolute;
+  position: relative;
   right: 20px;
   cursor: pointer;
   background-size: 20px 20px;
 }
+
+.task-list_finalizado{
+width: 20px;
+height: 20px;
+position: relative;
+right: 20px;
+cursor:pointer;
+background-size: 20px 20px;
+}
+
+.task-list_iniciado{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 20px;
+  cursor:pointer;
+  background-size: 20px 20px;
+}
+
+.task-list_retroceder{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 50px;
+  cursor:pointer;
+  background-size: 20px 20px;
+}
+
+.task-list_retroceder{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 50px;
+  cursor:pointer;
+  background-size: 20px 20px;
+}
+
+.task-list li
+{
+  list-style-type: none;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.task-list lo:nth-child(2n){
+  background: #f5f4f5;
+}
+
 table{
   width: auto;
 }

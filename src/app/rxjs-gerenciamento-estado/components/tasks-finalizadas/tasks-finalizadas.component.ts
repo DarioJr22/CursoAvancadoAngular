@@ -16,10 +16,12 @@ export class TasksFinalizadasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.finalizada$ = this.store.getTodoList().pipe(
-        map(todolist=> todolist)
-        )
-      }
+        //Tasks finalizadas
+          this.finalizada$ = this.store.getTodoList().pipe(
+            map(todolist => todolist.filter(i => i.task_fin))
+          )
+        }
+
 
 
 /*
