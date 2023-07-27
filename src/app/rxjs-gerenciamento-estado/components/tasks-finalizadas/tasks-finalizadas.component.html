@@ -1,5 +1,8 @@
 <div class="tasks">
-  <mv-todo-list [task]="finalizada$ | async">
+  <mv-todo-list
+  [estado]="'finalizado'"
+  [task]="finalizada$ | async"
+  (toggle)="toggleItem($event)">
     Finalizadas
   </mv-todo-list>
 </div>

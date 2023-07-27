@@ -1,33 +1,23 @@
-<div class="task-list">
+<mat-card class="cardWrapper">
   <h3>
     <ng-content></ng-content>
   </h3>
-  <table class="table table-striped">
-    <tbody>
-      <tr class="d-flex justify-content-space-between" *ngFor="let i of task">
-        <td>
-          <span>{{i.id}}</span>
-        </td>
-        <td class="d-flex justify-content-space-between">
+    <ul>
+      <li *ngFor="let i of task; index as y">
+       <mat-card class="task-card">
+        <span>
+        <strong>
+          {{i.id}}
+        </strong>
+        </span>
+        <div class="task-desc">
+          <mat-icon
+          style="cursor: pointer;" *ngIf="estado != 'nIniciado'" (click)="toggleItem(y,'left')">keyboard_arrow_left</mat-icon>
           <span>{{i.name}}</span>
+          <mat-icon  style="cursor: pointer;" *ngIf="estado != 'finalizado'"  (click)="toggleItem(y,'right')">keyboard_arrow_right</mat-icon>
+        </div>
+        </mat-card>
+      </li>
+    </ul>
 
-        </td>
-        <span *ngIf="i.task_ini && !i.task_fin" class="task-list_finalizado">
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </span>
-
-        <span *ngIf="!i.task_ini && !i.task_fin" class="task-list_iniciado">
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </span>
-
-        <span *ngIf="!i.task_ini && i.task_fin" class="task-list_retroceder">
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </span>
-
-        <span *ngIf="!i.task_ini && !i.task_fin" class="task-list_retroceder">
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </span>
-      </tr>
-    </tbody>
-  </table>
-</div>
+</mat-card>

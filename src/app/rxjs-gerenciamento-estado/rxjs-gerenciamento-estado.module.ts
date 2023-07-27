@@ -10,6 +10,8 @@ import { SharedModule } from "primeng/api";
 import { AsyncPipe, CommonModule } from "@angular/common";
 import { Store } from "./task";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
+import { NotifyModule } from "../shared/notify/notify.module";
+import { MatCardModule } from "@angular/material/card";
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { MatIcon, MatIconModule } from "@angular/material/icon";
     SharedModule,
     AsyncPipe,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    NotifyModule,
+    MatCardModule
   ],
   providers:[
     ToDoService,

@@ -10,11 +10,11 @@ export interface Task{
   usuario:any;
 }
 export interface State{
-  todoList:Task[]
+  todolist:Task[]
 }
 
 const state:State = {
-  todoList:[]
+  todolist:[]
 }
 
 export class Store {
@@ -26,7 +26,7 @@ export class Store {
 
   public getTodoList():Observable<Task[]>{
     return this.store.pipe(
-      map(store => store.todoList)
+      map(store => store.todolist)
     )
   }
 

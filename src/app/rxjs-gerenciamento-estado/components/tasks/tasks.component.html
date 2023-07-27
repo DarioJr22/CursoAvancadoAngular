@@ -1,5 +1,8 @@
 <div class="tasks">
-  <mv-todo-list [task]="todolist$ | async">
+  <mv-todo-list
+  [estado]="'nIniciado'"
+  [task]="todolist$ | async"
+  (toggle)="toggleItem($event)">
     Tarefas
   </mv-todo-list>
 </div>

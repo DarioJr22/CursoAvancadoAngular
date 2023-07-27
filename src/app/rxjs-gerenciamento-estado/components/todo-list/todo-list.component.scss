@@ -17,7 +17,6 @@
 .task-list{
   width: auto;
   background: #fff;
-  box-shadow: 0 16px 24px 0 black;
 }
 
 .task-list h3{
@@ -82,8 +81,7 @@ background-size: 20px 20px;
   background-size: 20px 20px;
 }
 
-.task-list li
-{
+li{
   list-style-type: none;
   position: relative;
   padding: 10px 20px;
@@ -91,6 +89,22 @@ background-size: 20px 20px;
 
 .task-list lo:nth-child(2n){
   background: #f5f4f5;
+}
+.task-card{
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-between;
+align-items: center;
+border-radius: 0.3rem;
+border: 1px solid #a3a3a3;
+padding: 1rem;
+  .task-desc{
+    display: flex;
+    align-items: center;
+  }
+}
+.cardWrapper{
+  margin: 05rem 0rem 35rem 0rem;
 }
 
 table{
