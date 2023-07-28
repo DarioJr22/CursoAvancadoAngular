@@ -12,6 +12,8 @@ import { NotificacaoType } from 'src/app/shared/notify/service/Inotify';
 })
 export class TasksIniciadasComponent implements OnInit {
   iniciadas$:Observable<any[]> = new Observable()
+  a = new SpeechRecognition()
+
 
   constructor(private todoServ:ToDoService,
     private store:Store,
@@ -22,7 +24,11 @@ export class TasksIniciadasComponent implements OnInit {
     //Tasks finalizadas
       this.iniciadas$ = this.store.getTodoList().pipe(
         map(
-          todolist => todolist.filter( i => i.task_ini && !i.task_fin)
+          todolist =>
+            todolist.
+            filter( i =>
+              i.task_ini &&
+              !i.task_fin)
         )
       )
     }
