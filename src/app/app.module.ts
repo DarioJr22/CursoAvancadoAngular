@@ -24,6 +24,7 @@ import { EstudoPipesModule } from './pipe/estudo-pipes/estudo-pipes.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
 import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -34,6 +35,7 @@ import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
     ReactiveFormsComponent,
     NotFoundComponentComponent,
     LoginComponent,
+    DashboardComponent,
 
    /*  InputtextComponent,
     InputnumberComponent,
