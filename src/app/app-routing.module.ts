@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsObsComponent } from './rxjs-obs/rxjs-obs.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from 'src/assets/auth/app.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     loadChildren:()=> import('./../app/rxjs-gerenciamento-estado/rxjs-gerenciamento-estado.module').then(x => x.RxjsGerenciamentoModule)
   },
   {
+    path:'dashboard',
+   component:DashboardComponent
+  },
+  {
     path:'**',
     component:NotFoundComponentComponent
   }
@@ -52,7 +57,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing:false})],
+  imports: [
+    RouterModule.forRoot(routes, {enableTracing:false}
+    )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

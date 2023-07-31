@@ -42,6 +42,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt-BR');
 import {registerLocaleData} from '@angular/common';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -95,8 +96,9 @@ import {registerLocaleData} from '@angular/common';
         MatButtonModule,
         MatSidenavModule,
         MatSlideToggleModule,
-        MatDialogModule
+        MatDialogModule,
         //Adaptações do material -- Customização de componentes
+        NgxChartsModule
 
 
     ],

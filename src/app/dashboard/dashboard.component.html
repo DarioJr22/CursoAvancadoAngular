@@ -1,1 +1,114 @@
-<p>dashboard works!</p>
+<div style="
+display: flex;
+justify-content: center;">
+
+
+<mat-tab-group>
+  <mat-tab label="Ng2 Charts">
+    <div class="dashGrid">
+    <mat-card>
+        <mat-card-content>
+            <canvas
+              baseChart
+              [data]="barChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [type]="'bar'">
+          </canvas>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content>
+        <canvas baseChart
+          [type]="'pie'"
+          [datasets]="pieChartDatasets"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend">
+        </canvas>
+      </mat-card-content>
+  </mat-card>
+  </div>
+  </mat-tab>
+  <mat-tab label="Ngx Charts">
+    <button style="width: 100%; margin: 1rem 0rem 1rem 0rem ;" (click)="randomValueNgxCharts(this.single)" class="btn btn-primary">
+      Randomize
+    </button>
+    <div class="dashGrid">
+
+      <mat-card>
+
+        <mat-card-content>
+          <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          [xAxis]="true"
+          [yAxis]="false"
+          [legend]="false"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+        >
+          </ngx-charts-bar-vertical>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+
+          <mat-card-content>
+            <ngx-charts-pie-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="single"
+            [gradient]="gradient"
+            [legend]="false"
+            [legendPosition]="legendPosition"
+            [labels]="true"
+            [doughnut]="false"
+            (select)="onSelect($event)"
+            >
+          </ngx-charts-pie-chart>
+          </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <ngx-charts-advanced-pie-chart
+
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="single"
+        [gradient]="gradient"
+        (select)="onSelect($event)"
+        >
+      </ngx-charts-advanced-pie-chart>
+      </mat-card>
+      <mat-card>
+        <ngx-charts-polar-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [legend]="false"
+        [legendPosition]="legendPosition"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxis]="true"
+        [yAxis]="true"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [results]="multi"
+        (select)="onSelect($event)">
+      </ngx-charts-polar-chart>
+      </mat-card>
+    </div>
+
+  </mat-tab>
+
+</mat-tab-group>
+
+</div>
+
+

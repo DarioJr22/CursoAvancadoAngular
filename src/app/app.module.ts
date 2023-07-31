@@ -25,7 +25,9 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginatorIntl } from './shared/models/paginator/matpaginator';
 import { ZonasModuleModule } from './dl-zonas-providers/zonas-module.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { NgChartsModule } from 'ng2-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -56,12 +58,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NotifyModule,
     EstudoPipesModule,
     ZonasModuleModule,
+    NgxChartsModule,
 
 
     //Mat-Module
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    NgChartsModule,
+    MatTabsModule
 
   ],
   providers: [

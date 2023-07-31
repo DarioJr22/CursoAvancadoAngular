@@ -12,7 +12,7 @@ import { NotificacaoType } from 'src/app/shared/notify/service/Inotify';
 })
 export class TasksIniciadasComponent implements OnInit {
   iniciadas$:Observable<any[]> = new Observable()
-  a = new SpeechRecognition()
+
 
 
   constructor(private todoServ:ToDoService,
