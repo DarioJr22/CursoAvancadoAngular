@@ -1,11 +1,11 @@
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt-BR');
-import {registerLocaleData} from '@angular/common';
+import {CommonModule, registerLocaleData} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatTabsModule} from '@angular/material/tabs';
+import { register } from 'swiper/element/bundle'
+
 
 
 @NgModule({
@@ -66,8 +68,11 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatButtonModule,
     MatDialogModule,
     NgChartsModule,
-    MatTabsModule
+    MatTabsModule,
 
+    CommonModule
+
+    
   ],
   providers: [
     LoginService,
@@ -80,6 +85,7 @@ import {MatTabsModule} from '@angular/material/tabs';
       useClass:CustomMatPaginatorIntl
     }
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

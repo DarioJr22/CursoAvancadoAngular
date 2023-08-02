@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { data } from 'cypress/types/jquery';
+import Swiper from 'swiper';
+import {} from 'swiper';
 
 @Component({
   selector: 'mv-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+
 })
 export class DashboardComponent {
 
@@ -58,11 +61,54 @@ randomValueNg2Charts(){
 
 
   console.log(this.barChartData);
-
-
-
 }
 
+
+//$-----------Line Charts---------------$
+public lineChartData: ChartConfiguration<'line'>['data'] = {
+  labels: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July'
+  ],
+  datasets: [
+    {
+      data: [ 65, 59, 80, 81, 56, 55, 40 ],
+      label: 'Series A',
+      fill: true,
+      tension: 0.5,
+      borderColor: 'black',
+      backgroundColor: 'rgba(255,0,0,0.3)'
+    }
+  ]
+};
+public lineChartOptions: ChartOptions<'line'> = {
+  responsive: false
+};
+public lineChartLegend = true;
+
+//$---------Scater Plot-------------$
+public scatterChartDatasets: ChartConfiguration<'scatter'>['data']['datasets'] = [
+  {
+    data: [
+      { x: 1, y: 1 },
+      { x: 2, y: 3 },
+      { x: 3, y: -2 },
+      { x: 4, y: 4 },
+      { x: 5, y: -3},
+    ],
+    label: 'Series A',
+    pointRadius: 10,
+  },
+];
+
+public scatterChartOptions: ChartConfiguration<'scatter'>['options'] = {
+  responsive: false,
+};
 
 
   //NgxCharts
@@ -74,11 +120,21 @@ randomValueNg2Charts(){
       "value": 8940000
     },
     {
-      "name": "USA",
+      "name": "UoA",
       "value": 5000000
     },
     {
       "name": "France",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Mexico",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Brasil",
       "value": 7200000
     }
   ];
@@ -203,7 +259,7 @@ randomValueNg2Charts(){
   colorScheme: Color = {
     name: 'Emotions',
     selectable: true,
-    domain: ['#c70000', '#ed7d31', '#ffff01', '#a8d18d', '#5AA454'],
+    domain: ['#03221c', '#042921', '#06614f', '#063b31', '#042921'],
     group: ScaleType.Ordinal,
   }
 
@@ -215,4 +271,7 @@ randomValueNg2Charts(){
   onSelect(event:any) {
     console.log(event);
   }
+
+
+
 }

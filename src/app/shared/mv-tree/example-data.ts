@@ -9,6 +9,7 @@ export const files = [
   {
     name: 'Estudos de caso',
     type: 'pasta',
+    icon:'folder',
     children: [
       {
         name: 'Produtos - (Estudo de grid)',

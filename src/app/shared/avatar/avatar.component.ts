@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent {
+  foto:boolean = false;
+
 
 }

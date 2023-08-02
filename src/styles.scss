@@ -15,17 +15,46 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$mv-light-palette:(
+  50:#12ffdf,
+  100:#10deb5,
+  200:#0db896,
+  300:#0c9176,
+  400:#06614f,
+  500:#0c5c4c,
+  600:#064d3e,
+  700:#064639,
+  800:#063b31,
+  900:#042c24,
+  A100:#042921,
+  A200:#03221c,
+  contrast:(
+    50:$color-neutral-darkest,
+    100:$color-neutral-darkest,
+    200:$color-neutral-darkest,
+    300:$color-neutral-darkest,
+    400:$color-neutral-darkest,
+    500:$color-neutral-darkest,
+    600:$color-neutral-darkest,
+    700:$color-neutral-darkest,
+    800:$color-neutral-lightest,
+    900:$color-neutral-lightest,
+    A100:$color-neutral-lightest,
+    A200:$color-neutral-lightest,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$CursoAvancadoAngular-primary: mat.define-palette(mat.$indigo-palette);
+$CursoAvancadoAngular-primary: mat.define-palette($mv-light-palette);
 $CursoAvancadoAngular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $CursoAvancadoAngular-warn: mat.define-palette(mat.$red-palette);
 
 
 //Hue's de tematização dark theme
-$CursoAvancadoAngular-primary-dark:mat.define-palette(mat.$pink-palette);
+$CursoAvancadoAngular-primary-dark:mat.define-palette($mv-light-palette);
 $CursoAvancadoAngular-accent-dark:mat.define-palette(mat.$blue-grey-palette);
 $CursoAvancadoAngular-warn-dark:mat.define-palette(mat.$red-palette);
 

@@ -43,6 +43,8 @@ import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt-BR');
 import {registerLocaleData} from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SideBarRecolhidoComponent } from './side-bar-recolhido/side-bar-recolhido.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -63,7 +65,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         AvatarComponent,
         FooterComponent,
         ButtonComponent,
-        DialogComponent
+        DialogComponent,
+        SideBarRecolhidoComponent
 
     ],
     imports:[
@@ -97,6 +100,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         MatSidenavModule,
         MatSlideToggleModule,
         MatDialogModule,
+        MatTooltipModule,
         //Adaptações do material -- Customização de componentes
         NgxChartsModule
 
@@ -113,7 +117,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
       MensagemComponent,
       InputnumberComponent,
       SideBarComponent,
-      ButtonComponent
+      ButtonComponent,
+      SideBarRecolhidoComponent
     ],
     providers:[
       {provide:'ttlDefault',useValue:3000}

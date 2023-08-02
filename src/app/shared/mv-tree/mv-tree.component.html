@@ -1,10 +1,10 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-  <mat-tree-node [id]="node.rota" (click)="teste(node)" routerLinkActive="activeElement" [routerLink]="node.rota" *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-
-    <!-- <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type === 'file' ? 'description' : 'folder' }}
-    </mat-icon> -->
-
+  <mat-tree-node
+  [id]="node.rota"
+  routerLinkActive="activeElement"
+  [routerLink]="node.rota"
+  *matTreeNodeDef="let node"
+  matTreeNodeToggle>
     <mat-icon class="mat-icon-rtl-mirror">
       {{node.icon}}
     </mat-icon>
@@ -12,17 +12,19 @@
   </mat-tree-node>
 
   <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
-
-    <button [id]="node.rota" mat-icon-button matTreeNodeToggle
-            [attr.aria-label]="'Toggle ' + node.name">
-      <!----> <mat-icon class="mat-icon-rtl-mirror">
+    <button
+    [id]="node.rota"
+    mat-icon-button
+    matTreeNodeToggle
+    [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
                 {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-              </mat-icon>
+            </mat-icon>
     </button>
-   <!--  <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type ==='file' ? 'description' : 'folder' }}
-    </mat-icon> -->
-    <mat-icon style="margin-right: 10px;" class="mat-icon-rtl-mirror">
+
+    <mat-icon
+    *ngIf="node.type != 'pasta'"
+    class="mat-icon-rtl-mirror">
       {{node.icon}}
     </mat-icon>
     {{node.name}}

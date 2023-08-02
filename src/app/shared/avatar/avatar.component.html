@@ -1,3 +1,7 @@
-<div>
+<div class="avatar" *ngIf="!foto">
+  <mat-icon>person</mat-icon>
+</div>
 
+<div class="avatar" *ngIf="foto">
+  <img src="imgSrc">
 </div>
