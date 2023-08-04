@@ -45,8 +45,10 @@ import {registerLocaleData} from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SideBarRecolhidoComponent } from './side-bar-recolhido/side-bar-recolhido.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
-
+import { CarouselComponent } from './carousel/carousel.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
     declarations:[
         DropdownComponent,
@@ -66,7 +68,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         FooterComponent,
         ButtonComponent,
         DialogComponent,
-        SideBarRecolhidoComponent
+        SideBarRecolhidoComponent,
+        CarouselComponent
 
     ],
     imports:[
@@ -79,6 +82,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         RouterModule,
         NotifyModule,
         LayoutModule,
+        BrowserModule,
+        BrowserAnimationsModule,
         //Angular Material
         MatButtonModule,
         MatCardModule,
@@ -102,7 +107,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatDialogModule,
         MatTooltipModule,
         //Adaptações do material -- Customização de componentes
-        NgxChartsModule
+        NgxChartsModule,
+        SwiperModule
 
 
     ],
@@ -118,7 +124,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       InputnumberComponent,
       SideBarComponent,
       ButtonComponent,
-      SideBarRecolhidoComponent
+      SideBarRecolhidoComponent,
+      CarouselComponent,
+
     ],
     providers:[
       {provide:'ttlDefault',useValue:3000}

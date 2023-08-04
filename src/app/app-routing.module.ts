@@ -6,6 +6,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from 'src/assets/auth/app.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SlidesComponent } from './slides/slides.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path:'dashboard',
    component:DashboardComponent
+  },
+  {
+    path:'slide',
+    component:SlidesComponent
   },
   {
     path:'**',

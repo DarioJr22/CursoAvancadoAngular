@@ -28,7 +28,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatTabsModule} from '@angular/material/tabs';
-import { register } from 'swiper/element/bundle'
+import { SwiperModule } from 'swiper/angular';
+import { SlidesComponent } from './slides/slides.component';
+
 
 
 
@@ -40,6 +42,7 @@ import { register } from 'swiper/element/bundle'
     NotFoundComponentComponent,
     LoginComponent,
     DashboardComponent,
+    SlidesComponent,
 
    /*  InputtextComponent,
     InputnumberComponent,
@@ -69,10 +72,10 @@ import { register } from 'swiper/element/bundle'
     MatDialogModule,
     NgChartsModule,
     MatTabsModule,
-
+    SwiperModule,
     CommonModule
 
-    
+
   ],
   providers: [
     LoginService,

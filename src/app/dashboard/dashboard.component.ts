@@ -1,4 +1,5 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import KeenSlider, { KeenSliderInstance } from "keen-slider"
+import { CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
 import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { data } from 'cypress/types/jquery';
@@ -137,6 +138,52 @@ public scatterChartOptions: ChartConfiguration<'scatter'>['options'] = {
       "name": "Brasil",
       "value": 7200000
     }
+    ,
+    {
+      "name": "France",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Mexico",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Brasil",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "France",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Mexico",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Brasil",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "France",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Mexico",
+      "value": 7200000
+    }
+    ,
+    {
+      "name": "Brasil",
+      "value": 7200000
+    }
+
   ];
 
   multi: any[] = [
@@ -272,6 +319,25 @@ public scatterChartOptions: ChartConfiguration<'scatter'>['options'] = {
     console.log(event);
   }
 
+    // Adicione mais cards conforme necessário
+  ;
+  //Carroussel
+  slider!: KeenSliderInstance
+  @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
 
+  ngAfterViewInit() {
+    this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+      loop: true,
+      mode: "free-snap",
+      slides: {
+        perView: 5,
+        spacing: 45,
+      },
+    })
+  }
+
+  ngOnDestroy() {
+    if (this.slider) this.slider.destroy()
+  }
 
 }

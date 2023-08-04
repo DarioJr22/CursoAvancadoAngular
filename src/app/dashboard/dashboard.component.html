@@ -148,6 +148,19 @@ justify-content: center;">
         (select)="onSelect($event)">
       </ngx-charts-polar-chart>
       </mat-card>
+      <mat-card
+      style="
+      display: grid;
+      grid-column-end: span 4;">
+      <div style="display: flex;justify-content: center;">
+        <div style="border: 1px black solid;" class="keen-slider" #sliderRef>
+          <div style="border: 1px black solid;"
+          class="keen-slider__slide"
+          *ngFor="let i of single">{{i.name}}</div>
+        </div>
+      </div>
+
+      </mat-card>
     </div>
 
   </mat-tab>
