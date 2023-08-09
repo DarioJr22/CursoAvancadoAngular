@@ -15,7 +15,7 @@ export class LoginService  {
 
   getLogin(email:string,password:string){
     window.localStorage.setItem("email",email)
-    window.localStorage.setItem("password",password)
+    window.localStorage.setItem("password ",password)
     return AuthGuard();
   }
 
